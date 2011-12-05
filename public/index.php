@@ -17,6 +17,7 @@ $front = Zend_Controller_Front::getInstance();
 $front->setControllerDirectory(BASEPATH . '/controllers', 'default');
 $front->setBaseUrl($config->general->urlbase);
 
+$env = new Score11\Environment();
 if ($_SERVER['APPLICATION_ENV'] === 'development') {
     
 }

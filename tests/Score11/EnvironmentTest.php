@@ -23,4 +23,16 @@ class EnvironmentTest extends \PHPUnit_Framework_TestCase
         // Bisherigen Wert wieder herstellen
         $_SERVER['APPLICATION_ENV'] = $currentEnv;
     }
+    
+    public function testIsDev()
+    {
+        // Bisherigen Wert speichern
+        $currentEnv = $_SERVER['APPLICATION_ENV'];
+        // Wert loeschen
+        $_SERVER['APPLICATION_ENV'] = 'development';
+        $env = new Environment();
+        $this->assertTrue($env->isDev());
+        // Bisherigen Wert wieder herstellen
+        $_SERVER['APPLICATION_ENV'] = $currentEnv;
+    }
 }
