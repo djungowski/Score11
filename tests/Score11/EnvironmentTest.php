@@ -4,7 +4,7 @@ namespace Score11;
 require_once LIBPATH . '/Score11/Environment.php';
 
 class EnvironmentTest extends \PHPUnit_Framework_TestCase
-{   
+{
     public function testGet()
     {
         $env = new Environment();
@@ -20,5 +20,7 @@ class EnvironmentTest extends \PHPUnit_Framework_TestCase
         // Standardwert ist "production"
         $env = new Environment();
         $this->assertEquals('production', $env->get());
+        // Bisherigen Wert wieder herstellen
+        $_SERVER['APPLICATION_ENV'] = $currentEnv;
     }
 }
