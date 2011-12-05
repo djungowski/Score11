@@ -3,8 +3,10 @@ require_once '../bootstrap.php';
 require_once LIBPATH . '/Zend/Config/Ini.php';
 require_once LIBPATH . '/Zend/Registry.php';
 require_once LIBPATH . '/Zend/Controller/Front.php';
+require_once LIBPATH . '/Zend/Controller/Exception.php';
 require_once LIBPATH . '/Zend/Controller/Router/Route.php';
 require_once LIBPATH . '/Zend/Controller/Router/Rewrite.php';
+require_once LIBPATH . '/Zend/Layout.php';
 require_once LIBPATH . '/Score11/Environment.php';
 
 $config = new Zend_Config_Ini(BASEPATH . '/config/config.ini');
@@ -15,6 +17,9 @@ Zend_Registry::set('api', $api);
 $front = Zend_Controller_Front::getInstance();
 $front->setControllerDirectory(BASEPATH . '/controllers', 'default');
 $front->setBaseUrl($config->general->urlbase);
+
+// Zend_Layout verwenden
+Zend_Layout::startMvc();
 
 $env = new Score11\Environment();
 if ($_SERVER['APPLICATION_ENV'] === 'development') {
