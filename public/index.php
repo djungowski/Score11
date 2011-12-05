@@ -1,5 +1,4 @@
 <?php
-var_dump($_SERVER);
 require_once '../bootstrap.php';
 require_once LIBPATH . '/Zend/Config/Ini.php';
 require_once LIBPATH . '/Zend/Registry.php';
@@ -19,21 +18,22 @@ $front->setBaseUrl($config->general->urlbase);
 
 $env = new Score11\Environment();
 if ($_SERVER['APPLICATION_ENV'] === 'development') {
-    
+    $front->throwExceptions(true);
+    ini_set('display_errors', true);
 }
 
 $router = new Zend_Controller_Router_Rewrite();
 $router->addRoute(
-    'me_products',
+    'movies',
     new Zend_Controller_Router_Route(
-        ':productid/:name.html',
+        ':movieid/:name.html',
         array(
-            'module' => 'me',
-            'controller' => 'product',
+            'module' => 'default',
+            'controller' => 'movie',
             'action' => 'index'
         ),
         array(
-            'id' => '\d+'
+            'movieid' => '\d+'
         )
     )
 );
