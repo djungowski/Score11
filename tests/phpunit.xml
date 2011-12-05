@@ -1,0 +1,22 @@
+<phpunit
+  colors="true"
+  convertErrorsToExceptions="true"
+  convertNoticesToExceptions="true"
+  convertWarningsToExceptions="true"
+  stopOnFailure="true"
+  bootstrap="bootstrap.php">
+
+  <testsuites>
+    <testsuite name="Suite">
+      <file>TestSuite.php</file>
+    </testsuite>
+  </testsuites>
+
+  <filter>
+    <blacklist>
+      <directory suffix=".php">../library/Zend</directory>
+      <directory suffix=".php">../tests</directory>
+    </blacklist>
+  </filter>
+
+</phpunit>
