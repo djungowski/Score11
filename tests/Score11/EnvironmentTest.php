@@ -4,12 +4,7 @@ namespace Score11;
 require_once LIBPATH . '/Score11/Environment.php';
 
 class EnvironmentTest extends \PHPUnit_Framework_TestCase
-{
-    public static function suite()
-    {
-        return new \PHPUnit_Framework_TestSuite(__CLASS__);
-    }
-    
+{   
     public function testGet()
     {
         $env = new Environment();
