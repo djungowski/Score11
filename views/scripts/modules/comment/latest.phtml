@@ -1,14 +1,15 @@
 <div class="score11-comment-latest score11-listbox">
 	<div class="title">Neue Kommentare</div>
 	<div class="mini-preview">
-		<img src="http://www.score11.de/p/29/40529" />
+	    <?php if ($this->miniPreviewMovie['hasimage'] == 'y') { ?>
+		<img src="<?php print($this->miniPreviewMovie['image']); ?>" alt="" />
+		<?php } ?>
 		<?php print($this->miniPreviewMovie['movietitle']); ?><br />
 		<span class="cast">
     		von <?php print($this->miniPreviewMovie['director']); ?>
     		mit <?php print($this->miniPreviewMovie['actor']); ?><br />
     		(<?php print($this->miniPreviewMovie['movieyear']); ?>)
 		</span>
-		<?php if ($this->miniPreviewMovie['image'] == 'y') { } ?>
 	</div>
     <?php foreach($this->latestComments as $comment) { ?>
     <div class="innerbox">
