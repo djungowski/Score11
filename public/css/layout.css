@@ -5,8 +5,25 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #fff;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "droid-sans-1", "droid-sans-2", "Lucida Grande",
+		"Lucida Sans Unicode", tahoma, verdana, arial, sans-serif;
 	font-size: 14px;
+}
+
+a:link, a:active, a:visited {
+	color: cyan;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	margin: 0;
+	padding: 3px;
 }
 
 .score11-separator {
@@ -56,22 +73,57 @@ body {
 	padding: 0 10px;
 	float: left;
 	width: 72%;
+	font-size: 12px;
 }
 
 .score11-navigation {
 	width: 161px;
 	background: url(../img/navigation-bg.gif);
 	float: left;
+	font-size: 12px;
 }
 
 .score11-sidebar {
 	width: 165px;
 	background: url(../img/sidebar-bg.gif);
 	float: right;
+	font-size: 12px;
+}
+
+.score11-listbox {
+	max-width: 500px;
+}
+
+.score11-listbox .title {
+	padding: 0;
+	background-image: url(../../img/orangebar.gif);
+	text-align: center;
+	height: 19px;
+	color: #fff;
+	text-shadow: #000 2px 2px 2px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.score11-listbox .innerbox {
+	border: 1px solid #039;
+	margin-bottom: 5px;
+}
+
+.score11-comment-latest .date {
+	text-align: center;
+	text-size: 11px;
+}
+
+.score11-listbox .even-row {
+	background-color: #039;
+}
+
+.score11-listbox .uneven-row {
+	background-color: #006;
 }
 
 /*		Tablet Layout Landscape 1024px.       */
-
 @media only screen and (max-width: 1280px) {
 	.score11-content {
 		width: 60%;
@@ -79,7 +131,6 @@ body {
 }
 
 /*		Tablet Layout Portrait 768px.       */
-
 @media only screen and (max-width: 944px) {
 	.score11-sidebar {
 		display: none;
@@ -91,13 +142,11 @@ body {
 	.score11-navigation {
 		display: none;
 	}
-	
 	.score11-sidebar {
 		display: none;
 	}
-	
 	.score11-content {
-		width: 100%;
+		width: auto;
 	}
 }
 
@@ -106,11 +155,9 @@ body {
 	.score11-header .subtitle {
 		display: none;
 	}
-	
 	.score11-copyright .extended-copyright {
 		display: none;
 	}
-	
 	.score11-copyright .domains {
 		display: none;
 	}

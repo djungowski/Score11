@@ -9,6 +9,8 @@ require_once LIBPATH . '/Zend/Controller/Router/Rewrite.php';
 require_once LIBPATH . '/Zend/Layout.php';
 require_once LIBPATH . '/Score11/Environment.php';
 
+setlocale(LC_ALL, 'de_DE.utf8');
+
 $config = new Zend_Config_Ini(BASEPATH . '/config/config.ini');
 $api = new Zend_Config_Ini(BASEPATH . '/config/api.ini');
 Zend_Registry::set('config', $config);
