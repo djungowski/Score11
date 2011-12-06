@@ -9,12 +9,6 @@ body {
 	font-size: 14px;
 }
 
-.score11-header .celluloid {
-	height: 19px;
-	background-image: url(../img/celluloid.gif);
-	background-repeat: repeat-x;
-}
-
 .score11-header p {
 	margin: 0;
 }
@@ -37,10 +31,29 @@ body {
 	background-repeat: no-repeat;
 }
 
-/*		Mobile Layout Portrait 320px.       */
+.score11-celluloid {
+	height: 19px;
+	background-image: url(../img/celluloid.gif);
+	background-repeat: repeat-x;
+}
 
+.score11-copyright {
+	font-size: 11px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+/*		Mobile Layout Portrait 320px.       */
 @media only screen and (max-width: 400px) {
 	.score11-header .subtitle {
+		display: none;
+	}
+	
+	.score11-copyright .extended-copyright {
+		display: none;
+	}
+	
+	.score11-copyright .domains {
 		display: none;
 	}
 }
