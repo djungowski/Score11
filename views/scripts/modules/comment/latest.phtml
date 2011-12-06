@@ -13,11 +13,19 @@
     <?php foreach($this->latestComments as $comment) { ?>
     <div class="innerbox">
         <p class="date uneven-row">
-        	<?php print(strftime('%A, %d. %B %Y', strtotime($comment['timestamp']))); ?>
+        	<?php print($comment['timestamp-day']); ?>
         </p>
         <p class="movietitle even-row">
-            <?php print($comment['movietitle']); ?>
-            <?php print($comment['movieyear']); ?>
+        	<span>
+        	    <?php print($comment['timestamp-time']); ?>
+        	</span>
+        	<span class="thumb">
+        		<img src="<?php print($this->layout()->imgpath); ?>/thumb-<?php print($comment['thumb']); ?>" />
+    		</span>
+    		<span>
+                <?php print($comment['movietitle']); ?>
+                <?php print($comment['movieyear']); ?>
+            </span>
             <br />
             Kommentar von <?php print($comment['user']); ?>
         </p>

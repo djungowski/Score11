@@ -1,11 +1,15 @@
 @CHARSET "UTF-8";
 
 .score11-comment-latest .mini-preview {
-	width: 100px;
+	width: 102px;
 	float: left;
 	text-align: center;
 	background-color: #006;
 	border: 1px solid #039;
+}
+
+.score11-comment-latest .mini-preview img {
+	border: 1px solid #fff;
 }
 
 .score11-comment-latest .mini-preview .cast {

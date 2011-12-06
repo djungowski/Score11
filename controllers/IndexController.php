@@ -10,13 +10,20 @@ class IndexController extends Zend_Controller_Action
         
         $miniPreviewMovie = null;
         foreach ($latestComments as $key => $comment) {
+            // Text kuerzen
             $shortenedText = substr($comment['text'], 0, 450);
             if (strlen($comment['text']) > 450) {
                 $shortenedText .= ' &raquo;&raquo;&raquo;';
             }
             $latestComments[$key]['text_shortened'] = $shortenedText;
             
-            if ($comment['image'] == 'y' && !is_null($miniPreviewMovie)) {
+            $timestamp = strtotime($comment['timestamp']);
+            // Verwendete Datumsformate erstellen
+            $latestComments[$key]['timestamp-day'] = strftime('%A, %d. %B %Y', $timestamp);
+            $latestComments[$key]['timestamp-time'] = date('H:i', $timestamp);
+            
+            // Mini Preview feststellen
+            if ($comment['hasimage'] == 'y' && !is_null($miniPreviewMovie)) {
                 $miniPreviewMovie = $key;
             }
         }

@@ -123,6 +123,15 @@ p {
 	background-color: #006;
 }
 
+.score11-listbox .even-row span, .score11-listbox .uneven-row span {
+	display: block;
+	float: left;
+}
+
+.score11-listbox .thumb {
+	margin: 0 5px;
+}
+
 /*		Tablet Layout Landscape 1024px.       */
 @media only screen and (max-width: 1280px) {
 	.score11-content {
