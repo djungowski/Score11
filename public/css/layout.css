@@ -13,7 +13,6 @@ body {
 a:link, a:active, a:visited {
 	color: cyan;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
 	text-decoration: none;
 }
 
@@ -126,6 +125,7 @@ p {
 .score11-listbox .even-row span, .score11-listbox .uneven-row span {
 	display: block;
 	float: left;
+	line-height: 12px;
 }
 
 .score11-listbox .thumb {

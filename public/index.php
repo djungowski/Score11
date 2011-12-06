@@ -36,9 +36,9 @@ if ($_SERVER['APPLICATION_ENV'] === 'development') {
 
 $router = new Zend_Controller_Router_Rewrite();
 $router->addRoute(
-    'movies',
+    'moviepage',
     new Zend_Controller_Router_Route(
-        ':movieid/:name.html',
+        ':movieid/:name',
         array(
             'module' => 'default',
             'controller' => 'movie',

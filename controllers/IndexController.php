@@ -9,6 +9,7 @@ class IndexController extends Zend_Controller_Action
         $latestComments = $api->get();
         
         $miniPreviewMovie = null;
+        $router = $this->getFrontController()->getRouter();
         foreach ($latestComments as $key => $comment) {
             // Text kuerzen
             $shortenedText = substr($comment['text'], 0, 450);
@@ -21,6 +22,15 @@ class IndexController extends Zend_Controller_Action
             // Verwendete Datumsformate erstellen
             $latestComments[$key]['timestamp-day'] = strftime('%A, %d. %B %Y', $timestamp);
             $latestComments[$key]['timestamp-time'] = date('H:i', $timestamp);
+            
+            // Links zum Film generieren
+            $latestComments[$key]['movielink'] = $router->assemble(
+                array(
+                    'movieid' => $comment['refID'],
+                    'name' => $comment['movietitle']
+                ),
+                'moviepage'
+            );
             
             // Mini Preview feststellen
             if ($comment['hasimage'] == 'y' && !is_null($miniPreviewMovie)) {

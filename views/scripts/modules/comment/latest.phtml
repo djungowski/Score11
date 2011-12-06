@@ -2,9 +2,13 @@
 	<div class="title">Neue Kommentare</div>
 	<div class="mini-preview">
 	    <?php if ($this->miniPreviewMovie['hasimage'] == 'y') { ?>
-		<img src="<?php print($this->miniPreviewMovie['image']); ?>" alt="" />
+	    <a href="<?php print($this->miniPreviewMovie['movielink']); ?>">
+			<img src="<?php print($this->miniPreviewMovie['image']); ?>" alt="" />
+		</a>
 		<?php } ?>
-		<?php print($this->miniPreviewMovie['movietitle']); ?><br />
+		<a href="<?php print($this->miniPreviewMovie['movielink']); ?>">
+		    <?php print($this->miniPreviewMovie['movietitle']); ?>
+	    </a><br />
 		<span class="cast">
     		von <?php print($this->miniPreviewMovie['director']); ?>
     		mit <?php print($this->miniPreviewMovie['actor']); ?><br />
@@ -24,7 +28,9 @@
         		<img src="<?php print($this->layout()->imgpath); ?>/thumb-<?php print($comment['thumb']); ?>" />
     		</span>
     		<span>
-                <?php print($comment['movietitle']); ?>
+    			<a href="<?php print($comment['movielink']); ?>">
+                    <?php print($comment['movietitle']); ?>
+                </a>
                 <?php print($comment['movieyear']); ?>
             </span>
             <br />
