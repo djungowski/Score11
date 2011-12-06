@@ -4,6 +4,8 @@
 	width: 100px;
 	float: left;
 	text-align: center;
+	background-color: #006;
+	border: 1px solid #039;
 }
 
 .score11-comment-latest .mini-preview .cast {
@@ -13,6 +15,13 @@
 .score11-comment-latest .innerbox {
 	float: right;
 	max-width: 390px;
+}
+
+/*		Tablet Layout Portrait 768px.       */
+@media only screen and (max-width: 944px) {
+	.score11-comment-latest .innerbox {
+		max-width: 350px;
+	}
 }
 
 /*		Mobile Layout Portrait 320px.       */
