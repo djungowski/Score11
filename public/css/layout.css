@@ -9,6 +9,11 @@ body {
 	font-size: 14px;
 }
 
+.score11-separator {
+	display: block;
+	clear: both;
+}
+
 .score11-header p {
 	margin: 0;
 }
@@ -37,10 +42,35 @@ body {
 	background-repeat: repeat-x;
 }
 
+.score11-footer {
+	clear: both;
+}
+
 .score11-copyright {
 	font-size: 11px;
 	text-align: center;
 	padding-top: 15px;
+}
+
+.score11-main {
+	clear: both;
+}
+
+.score11-content {
+	float: left;
+	padding: 0 10px;
+}
+
+.score11-navigation {
+	width: 161px;
+	background: url(../img/navigation-bg.gif);
+	float: left;
+}
+
+.score11-sidebar {
+	width: 165px;
+	background: url(../img/sidebar-bg.gif);
+	float: right;
 }
 
 /*		Mobile Layout Portrait 320px.       */
@@ -54,6 +84,25 @@ body {
 	}
 	
 	.score11-copyright .domains {
+		display: none;
+	}
+}
+
+/*		Mobile Layout Landscape 480px.       */
+@media only screen and (max-width: 480px) {
+	.score11-navigation {
+		display: none;
+	}
+	
+	.score11-sidebar {
+		display: none;
+	}
+}
+
+/*		Tablet Layout Portrait 768px.       */
+
+@media only screen and (max-width: 944px) {
+	.score11-sidebar {
 		display: none;
 	}
 }
