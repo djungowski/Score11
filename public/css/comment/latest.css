@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+.score11-comment-latest .mini-preview {
+	width: 100px;
+	float: left;
+	text-align: center;
+}
+
+.score11-comment-latest .mini-preview .cast {
+	font-size: 10px;
+}
+
+.score11-comment-latest .innerbox {
+	float: right;
+	max-width: 390px;
+}
+
+/*		Mobile Layout Portrait 320px.       */
+@media only screen and (max-width: 400px) {
+	.score11-comment-latest .mini-preview {
+		display: none;
+	}
+}

@@ -1,0 +1,28 @@
+<div class="score11-comment-latest score11-listbox">
+	<div class="title">Neue Kommentare</div>
+	<div class="mini-preview">
+		<?php print($this->miniPreviewMovie['movietitle']); ?><br />
+		<span class="cast">
+    		von <?php print($this->miniPreviewMovie['director']); ?>
+    		mit <?php print($this->miniPreviewMovie['actor']); ?><br />
+    		(<?php print($this->miniPreviewMovie['movieyear']); ?>)
+		</span>
+		<?php if ($this->miniPreviewMovie['image'] == 'y') { } ?>
+	</div>
+    <?php foreach($this->latestComments as $comment) { ?>
+    <div class="innerbox">
+        <p class="date uneven-row">
+        	<?php print(strftime('%A, %d. %B %Y', strtotime($comment['timestamp']))); ?>
+        </p>
+        <p class="movietitle even-row">
+            <?php print($comment['movietitle']); ?>
+            <?php print($comment['movieyear']); ?>
+            <br />
+            Kommentar von <?php print($comment['user']); ?>
+        </p>
+        <p class="comment uneven-row">
+        	<?php print($comment['text_shortened']); ?>
+        </p>
+    </div>
+    <?php } ?>
+</div>
