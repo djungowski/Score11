@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: #000;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.score11-header .celluloid {
+	height: 19px;
+	background-image: url(../img/celluloid.gif);
+	background-repeat: repeat-x;
+}
+
+.score11-header p {
+	margin: 0;
+}
+
+.score11-header .logo {
+	height: 57px;
+	background-image: url(../img/header-bg.gif);
+}
+
+.score11-header .logo .left {
+	width: 176px;
+	float: left;
+}
+
+.score11-header .logo .right {
+	height: 57px;
+	margin-left: 176px;
+	padding-top: 21px;
+	background-image: url(../img/logo-right.gif);
+	background-repeat: no-repeat;
+}
+
+/*		Mobile Layout Portrait 320px.       */
+
+@media only screen and (max-width: 400px) {
+	.score11-header .subtitle {
+		display: none;
+	}
+}

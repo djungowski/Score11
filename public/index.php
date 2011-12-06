@@ -20,6 +20,11 @@ $front->setBaseUrl($config->general->urlbase);
 
 // Zend_Layout verwenden
 Zend_Layout::startMvc();
+$layout = Zend_Layout::getMvcInstance();
+$layout->urlbase = $config->general->urlbase;
+$layout->imgpath = $config->general->urlbase . $config->general->imgpath;
+// Kann jederzeit ueberschrieben werden, hier den Standardtitel setzen
+$layout->title = $config->general->title;
 
 $env = new Score11\Environment();
 if ($_SERVER['APPLICATION_ENV'] === 'development') {
