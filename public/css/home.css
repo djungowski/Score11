@@ -1,10 +1,13 @@
 @CHARSET "UTF-8";
-.score11-home-left {
-	float: left;
-	width: 50%;
-}
-
-.score11-home-right {
-	float: right;
-	width: 50%;
+/*		Tablet Layout Landscape 1024px.       */
+@media only screen and (min-width: 1280px) {
+	.score11-home-left {
+		float: left;
+		width: 50%;
+	}
+	
+	.score11-home-right {
+		float: right;
+		width: 50%;
+	}
 }
