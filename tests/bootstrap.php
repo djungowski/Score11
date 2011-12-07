@@ -17,3 +17,15 @@ $config = new Zend_Config(
     true // allowModifications
 );
 Zend_Registry::set('config', $config);
+
+// Api Config
+$api = new Zend_Config(
+    array(
+        'api' => array(
+            'host' => 'http://localhost',
+            'user' => '',
+            'key' => ''
+        )
+    )
+);
+Zend_Registry::set('api', $api);
