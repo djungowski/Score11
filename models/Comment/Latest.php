@@ -44,9 +44,7 @@ class Latest extends Api\Transformator
             $this->_latestComments[$key]['timestamp-time'] = strftime($config->dates->listbox->time, $timestamp);
             
             // Mini Preview feststellen
-            if ($comment['hasimage'] == 'y' && !isset($this->_miniPreviewMovie)) {
-                $this->_miniPreviewMovie = $key;
-            }
+            $this->checkForMiniPreview($comment['hasimage'], $key);
         }
         // Wenn kein Film ein Bild hat: Den ersten Film nehmen
         if (is_null($this->_miniPreviewMovie)) {
@@ -54,6 +52,20 @@ class Latest extends Api\Transformator
         }
         return $this->_latestComments;
     }
+
+    /**
+     * Pruefen, ob sich dieser Film fuer die Mini-Preview eignet
+     * (= hat der Film ein Bild?)
+     * 
+     * @param String $movieHasImage
+     * @param Integer $key
+     */
+    private function checkForMiniPreview($movieHasImage, $key)
+    {
+        if ($movieHasImage == 'y' && !isset($this->_miniPreviewMovie)) {
+            $this->_miniPreviewMovie = $key;
+        }
+    }    
     
     /**
      * Text kuerzen und Kuerzungshinweis mit Link versehen
