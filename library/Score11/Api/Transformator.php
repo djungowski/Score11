@@ -61,6 +61,9 @@ abstract class Transformator
      * Die tatsaechliche Transformation durchfuehren
      * Muss in Kind-Klasse implementiert werden
      * 
+     * @param Array Parameter fuer den API Call
+     * @return Array
+     * 
      */
-    public abstract function transform();
+    public abstract function transform($params = array());
 }
