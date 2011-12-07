@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+.score11-home-left {
+	float: left;
+	width: 50%;
+}
+
+.score11-home-right {
+	float: right;
+	width: 50%;
+}
