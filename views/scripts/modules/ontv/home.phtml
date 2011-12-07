@@ -1,0 +1,34 @@
+<div class="score11-ontv-home score11-listbox">
+	<div class="title">Fernseh-Tipps</div>
+	<?php foreach($this->onTv as $date) { ?>
+	<div class="innerbox">
+		<p class="date uneven-row">
+        	<?php print($date['date']); ?>
+        </p>
+        <?php
+        foreach ($date['movies'] as $key => $movie) {
+            $rowClass = 'uneven-row';
+            if ($key % 2 == 0) {
+                $rowClass = 'even-row';
+            }
+        ?>
+        <p class="movietitle <?php print($rowClass); ?>">
+        	<span class="time">
+        	    <?php print($movie['timestamp-time']); ?><br />
+        	    <?php print($movie['sender']); ?>
+        	</span>
+        	<span class="thumb">
+        		<img src="<?php print($this->layout()->imgpath); ?>/thumb-<?php print($movie['thumb']); ?>" />
+    		</span>
+    		<span>
+    			<a href="<?php print($movie['movielink']); ?>">
+                    <?php print($movie['movietitle']); ?>
+                </a>
+                <?php print($movie['movieyear']); ?>
+            </span>
+            <br />
+        </p>
+        <?php } ?>
+	</div>
+	<?php } ?>
+</div>
