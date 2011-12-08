@@ -4,12 +4,13 @@ use Score11\Api;
 
 class OnTv extends Api\Transformator
 {
+    private $_tvMovies = array();
+    
     public function transform($params = array())
     {
         $onTv = $this->getApi()->get();
         $config = \Zend_Registry::get('config');
         $router = $this->getFrontController()->getRouter();
-        $tvMovies = array();
         
         foreach ($onTv as $date => $movies) {
             $timestamp = strtotime($date);            
@@ -24,12 +25,18 @@ class OnTv extends Api\Transformator
                 $timestamp = strtotime($movie['date']);
                 // Verwendete Datumsformate erstellen
                 $movies[$key]['timestamp-time'] = strftime($config->dates->listbox->time, $timestamp);
+
+                $this->checkForMiniPreview($movies[$key]);
             }
-            $tvMovies[] = array(
+            $this->_tvMovies[] = array(
                 'date' => strftime($config->dates->listbox->title, $timestamp),
                 'movies' => $movies
             );
         }
-        return $tvMovies;
+        // Wenn kein Film ein Bild hat: Den ersten Film nehmen
+        if (is_null($this->_miniPreviewMovie)) {
+            $this->_miniPreviewMovie = $this->_tvMovies[0]['movies'][0];
+        }
+        return $this->_tvMovies;
     }
 }

@@ -18,6 +18,13 @@ abstract class Transformator
     private $_api;
     
     /**
+     * Mini Preview Movie
+     * 
+     * @var Array
+     */
+    protected $_miniPreviewMovie;
+    
+    /**
      * Front Controller setzen
      * 
      * @param \Zend_Controller_Front $front
@@ -55,6 +62,33 @@ abstract class Transformator
     public function getApi()
     {
         return $this->_api;
+    }
+    
+    /**
+     * Pruefen, ob sich dieser Film fuer die Mini-Preview eignet
+     * (= hat der Film ein Bild?)
+     * 
+     * @param String $movieHasImage
+     * @param Integer $key
+     */
+    protected function checkForMiniPreview($movie)
+    {
+        $canBeUsed = ($movie['hasimage'] == 'y' && !isset($this->_miniPreviewMovie));
+        if ($canBeUsed) {
+            $this->_miniPreviewMovie = $movie;
+        }
+        return $canBeUsed;
+    }
+    
+    /**
+     * Den Film fuer die Mini Preview zurueckgeben
+     * transform() muss vorher ausgefuehrt worden sein!
+     * 
+     * @return Array
+     */
+    public function getMiniPreviewMovie()
+    {
+        return $this->_miniPreviewMovie;
     }
     
     /**

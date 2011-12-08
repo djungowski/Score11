@@ -10,8 +10,6 @@ class Latest extends Api\Transformator
     
     private $_latestComments;
     
-    private $_miniPreviewMovie;
-    
     /**
      * Neueste Kommentare transformiert zurueckgeben
      *
@@ -44,28 +42,14 @@ class Latest extends Api\Transformator
             $this->_latestComments[$key]['timestamp-time'] = strftime($config->dates->listbox->time, $timestamp);
             
             // Mini Preview feststellen
-            $this->checkForMiniPreview($comment['hasimage'], $key);
+            $this->checkForMiniPreview($this->_latestComments[$key]);
         }
         // Wenn kein Film ein Bild hat: Den ersten Film nehmen
         if (is_null($this->_miniPreviewMovie)) {
-            $this->_miniPreviewMovie = 0;
+            $this->_miniPreviewMovie = $this->_latestComments[0];
         }
         return $this->_latestComments;
     }
-
-    /**
-     * Pruefen, ob sich dieser Film fuer die Mini-Preview eignet
-     * (= hat der Film ein Bild?)
-     * 
-     * @param String $movieHasImage
-     * @param Integer $key
-     */
-    private function checkForMiniPreview($movieHasImage, $key)
-    {
-        if ($movieHasImage == 'y' && !isset($this->_miniPreviewMovie)) {
-            $this->_miniPreviewMovie = $key;
-        }
-    }    
     
     /**
      * Text kuerzen und Kuerzungshinweis mit Link versehen
@@ -83,16 +67,5 @@ class Latest extends Api\Transformator
         // >> >> >> mit Link hinzufuegen, wenn der Text gekuerzt wurde
         $shortenedText .= sprintf(' <a href="%s">&raquo;&raquo;&raquo;</a>', $movieLink);
         return $shortenedText;
-    }
-    
-    /**
-     * Den Film fuer die Mini Preview zurueckgeben
-     * transform() muss vorher ausgefuehrt worden sein!
-     * 
-     * @return Array
-     */
-    public function getMiniPreviewMovie()
-    {
-        return $this->_latestComments[$this->_miniPreviewMovie];
     }
 }

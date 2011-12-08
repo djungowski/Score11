@@ -1,18 +1,19 @@
 <div class="score11-comment-latest score11-listbox">
 	<div class="title">Neue Kommentare</div>
 	<div class="mini-preview">
-	    <?php if ($this->miniPreviewMovie['hasimage'] == 'y') { ?>
-	    <a href="<?php print($this->miniPreviewMovie['movielink']); ?>">
-			<img src="<?php print($this->miniPreviewMovie['image']); ?>" alt="" />
+		<?php $miniPreviewMovie = $this->miniPreviewMovie['latest-comments']; ?>
+	    <?php if ($miniPreviewMovie['hasimage'] == 'y') { ?>
+	    <a href="<?php print($miniPreviewMovie['movielink']); ?>">
+			<img src="<?php print($miniPreviewMovie['image']); ?>" alt="" />
 		</a>
 		<?php } ?>
-		<a href="<?php print($this->miniPreviewMovie['movielink']); ?>">
-		    <?php print($this->miniPreviewMovie['movietitle']); ?>
+		<a href="<?php print($miniPreviewMovie['movielink']); ?>">
+		    <?php print($miniPreviewMovie['movietitle']); ?>
 	    </a><br />
 		<span class="cast">
-    		von <?php print($this->miniPreviewMovie['director']); ?>
-    		mit <?php print($this->miniPreviewMovie['actor']); ?><br />
-    		(<?php print($this->miniPreviewMovie['movieyear']); ?>)
+    		von <?php print($miniPreviewMovie['director']); ?>
+    		mit <?php print($miniPreviewMovie['actor']); ?><br />
+    		(<?php print($miniPreviewMovie['movieyear']); ?>)
 		</span>
 	</div>
     <?php foreach($this->latestComments as $comment) { ?>

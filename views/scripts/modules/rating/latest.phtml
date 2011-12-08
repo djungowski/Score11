@@ -1,7 +1,7 @@
-<div class="score11-ontv-home score11-listbox">
-	<div class="title">Fernseh-Tipps</div>
+<div class="score11-rating-latest score11-listbox">
+	<div class="title">Neue Wertungen</div>
 	<div class="mini-preview">
-		<?php $miniPreviewMovie = $this->miniPreviewMovie['ontv-home']; ?>
+		<?php $miniPreviewMovie = $this->miniPreviewMovie['rating-latest']; ?>
 	    <?php if ($miniPreviewMovie['hasimage'] == 'y') { ?>
 	    <a href="<?php print($miniPreviewMovie['movielink']); ?>">
 			<img src="<?php print($miniPreviewMovie['image']); ?>" alt="" />
@@ -16,22 +16,17 @@
     		(<?php print($miniPreviewMovie['movieyear']); ?>)
 		</span>
 	</div>
-	<?php foreach($this->onTv as $date) { ?>
 	<div class="innerbox">
-		<p class="date uneven-row">
-        	<?php print($date['date']); ?>
-        </p>
-        <?php
-        foreach ($date['movies'] as $key => $movie) {
-            $rowClass = 'uneven-row';
-            if ($key % 2 == 0) {
-                $rowClass = 'even-row';
-            }
-        ?>
+	<?php
+	foreach($this->latestRatings as $key => $movie) {
+        $rowClass = 'uneven-row';
+        if ($key % 2 == 0) {
+            $rowClass = 'even-row';
+        }
+    ?>
         <p class="movietitle <?php print($rowClass); ?>">
         	<span class="time">
-        	    <?php print($movie['timestamp-time']); ?><br />
-        	    <?php print($movie['sender']); ?>
+        	    <?php print($movie['timestamp-time']); ?>
         	</span>
         	<span class="thumb">
         		<img src="<?php print($this->layout()->imgpath); ?>/thumb-<?php print($movie['thumb']); ?>" />
@@ -44,7 +39,6 @@
             </span>
             <br />
         </p>
-        <?php } ?>
-	</div>
 	<?php } ?>
+	</div>
 </div>

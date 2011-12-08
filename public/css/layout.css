@@ -110,6 +110,8 @@ p {
 .score11-listbox .innerbox {
 	border: 1px solid #039;
 	margin-bottom: 5px;
+	float: right;
+	width: 390px;
 }
 
 .score11-listbox .date {
@@ -137,6 +139,22 @@ p {
 	margin: 0 5px;
 }
 
+.score11-listbox .mini-preview {
+	width: 102px;
+	float: left;
+	text-align: center;
+	background-color: #006;
+	border: 1px solid #039;
+}
+
+.score11-listbox .mini-preview img {
+	border: 1px solid #fff;
+}
+
+.score11-listbox .mini-preview .cast {
+	font-size: 10px;
+}
+
 /*		Tablet Layout Landscape 1024px.       */
 @media only screen and (max-width: 1280px) {
 	.score11-content {
@@ -148,6 +166,9 @@ p {
 @media only screen and (max-width: 944px) {
 	.score11-sidebar {
 		display: none;
+	}
+	.score11-listbox .innerbox {
+		width: 350px;
 	}
 }
 
@@ -174,5 +195,11 @@ p {
 	}
 	.score11-copyright .domains {
 		display: none;
+	}
+	.score11-listbox .mini-preview {
+		display: none;
+	}
+	.score11-listbox .innerbox {
+		width: 298px;
 	}
 }
