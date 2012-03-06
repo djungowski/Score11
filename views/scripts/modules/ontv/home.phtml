@@ -1,5 +1,6 @@
 <div class="score11-ontv-home score11-listbox">
 	<div class="title">Fernseh-Tipps</div>
+	<?php if (!empty($this->onTv)) { ?>
 	<div class="mini-preview">
 		<?php $miniPreviewMovie = $this->miniPreviewMovie['ontv-home']; ?>
 	    <?php if ($miniPreviewMovie['hasimage'] == 'y') { ?>
@@ -46,5 +47,10 @@
         </p>
         <?php } ?>
 	</div>
+	<?php } ?>
+	<?php } else { ?>
+	<div class="uneven-row">
+    	Derzeit gibt es keinen Fernsehtipps.
+    </div>
 	<?php } ?>
 </div>

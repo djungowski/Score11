@@ -34,7 +34,7 @@ class OnTv extends Api\Transformator
             );
         }
         // Wenn kein Film ein Bild hat: Den ersten Film nehmen
-        if (is_null($this->_miniPreviewMovie)) {
+        if (is_null($this->_miniPreviewMovie) && !empty($onTv)) {
             $this->_miniPreviewMovie = $this->_tvMovies[0]['movies'][0];
         }
         return $this->_tvMovies;
