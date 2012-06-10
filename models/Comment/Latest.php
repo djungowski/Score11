@@ -11,7 +11,14 @@ class Latest extends Api\Transformator
      * 
      * @var Integer
      */
-    const MAX_COMMENT_LENGTH = 520;
+    const MAX_COMMENT_LENGTH_SUM = 400;
+
+    /**
+     * Maximale Textlaenge fuer einen einzelnen Kommentar
+     *
+     * @var Integer
+     */
+    const MAX_COMMENT_LENGTH_SINGLE = 230;
     
     /**
      * Neueste Kommentare transformiert zurueckgeben
@@ -49,16 +56,27 @@ class Latest extends Api\Transformator
             $this->checkForMiniPreview($latestComments[$key]);
             
             $commentLength = strlen($comment['text']);
-            if ($commentsLengthSum + $commentLength >= self::MAX_COMMENT_LENGTH) {
-                $textMaxLength = $commentLength - $commentsLengthSum;
-                // Text kuerzen
-                $latestComments[$key]['text_shortened'] = $this->shortenText($comment['text'], $movieLink, $textMaxLength);
-                // Ist die Maximallaenge der Text erreicht, keine weiteren Filme mehr bearbeiten
-                break;
-            }
-            // Ist die maximale Anzahl noch nicht erreicht, Text ungekuerzt uebernehmen
-            $latestComments[$key]['text_shortened'] = $comment['text'];
+	    // Erstmal grundsaetzlich jeden Kommentar kuerzen, falls er laenger ist als das Einzelmaximum
+	    if ($commentLength > self::MAX_COMMENT_LENGTH_SINGLE) {
+                $latestComments[$key]['text_shortened'] = $this->shortenText($comment['text'], $movieLink, self::MAX_COMMENT_LENGTH_SINGLE);
+		$commentLength = self::MAX_COMMENT_LENGTH_SINGLE;
+	    } else {
+	    	$latestComments[$key]['text_shortened'] = $comment['text'];
+            	$commentLength = strlen($comment['text']);
+	    }
+
+            // Ist das Gesamtmaximum erreicht, Text nochmal kuerzen
+	    if ($commentsLengthSum + $commentLength > self::MAX_COMMENT_LENGTH_SUM) {
+		$textMaxLength = self::MAX_COMMENT_LENGTH_SUM - $commentsLengthSum;
+		$latestComments[$key]['text_shortened'] = $this->shortenText($comment['text'], $movieLink, $textMaxLength);
+            	$commentLength = $textMaxLength;
+	    }
             $commentsLengthSum += $commentLength;
+
+	    // Ist das Gesamtmaximum erreicht, keine weiteren Kommentare mehr aufnehmen
+	    if ($commentsLengthSum === self::MAX_COMMENT_LENGTH_SUM) {
+	    	break;
+	    }
         }
         // Wenn kein Film ein Bild hat: Den ersten Film nehmen
         if (is_null($this->_miniPreviewMovie)) {
