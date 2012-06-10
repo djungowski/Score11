@@ -4,8 +4,11 @@
 		<base href="<?php print $this->layout()->urlbase; ?>" />
 		<title><?php print $this->layout()->title; ?></title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
-    	<link rel="stylesheet" type="text/css" href="<?php print $this->layout()->urlbase; ?>css/normalize.css" media="all" />		
+    		<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    		<link rel="stylesheet" type="text/css" href="<?php print $this->layout()->urlbase; ?>css/normalize.css" media="all" />		
 		<link rel="stylesheet" type="text/css" href="<?php print $this->layout()->urlbase; ?>css/layout.css" media="all" />
 		<link rel="stylesheet" type="text/css" href="<?php print $this->layout()->urlbase; ?>css/home.css" media="all" />
 		<link rel="stylesheet" type="text/css" href="<?php print $this->layout()->urlbase; ?>css/comment/latest.css" media="all" />
@@ -28,7 +31,6 @@
 	
 		<div class="score11-navigation">Here be navigation</div>
 		<div class="score11-content"><?php print $this->layout()->content; ?></div>
-		<div class="score11-sidebar">Here be sidebar</div>
 	
 	<div class="score11-separator">&nbsp;</div>
 	<div class="score11-footer">
