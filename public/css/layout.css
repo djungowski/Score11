@@ -148,6 +148,12 @@ p {
 	font-size: 10px;
 }
 
+@media only screen and (min-width: 1024px) {
+	.score11-content {
+		width: 855px;
+	}
+}
+
 /*		Tablet Layout Landscape 1024px.       */
 @media only screen and (max-width: 1280px) {
 }
@@ -177,5 +183,9 @@ p {
 	}
 	.score11-listbox .mini-preview {
 		display: none;
+	}
+
+	.score11-listbox .innerbox {
+		width: 100%;
 	}
 }
