@@ -19,6 +19,13 @@ class Latest extends Api\Transformator
      * @var Integer
      */
     const MAX_COMMENT_LENGTH_SINGLE = 230;
+
+    /**
+     * Maximale Anzahl an Kommentaren
+     *
+     * @var Integer
+     */
+     const MAX_COMMENTS = 3;
     
     /**
      * Neueste Kommentare transformiert zurueckgeben
@@ -74,7 +81,8 @@ class Latest extends Api\Transformator
             $commentsLengthSum += $commentLength;
 
 	    // Ist das Gesamtmaximum erreicht, keine weiteren Kommentare mehr aufnehmen
-	    if ($commentsLengthSum === self::MAX_COMMENT_LENGTH_SUM) {
+            // Auch: Nicht mehr als 3 Kommentare anzeigen
+	    if ($commentsLengthSum === self::MAX_COMMENT_LENGTH_SUM || ($key +1 ) === self::MAX_COMMENTS) {
 	    	break;
 	    }
         }
