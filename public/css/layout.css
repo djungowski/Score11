@@ -163,12 +163,15 @@ p {
 @media only screen and (max-width: 1280px) {
 }
 
-/*		Tablet Layout Portrait 768px.       */
-@media only screen and (max-width: 944px) {
-
+@media only screen and (max-width: 1250px) {
 	.score11-navigation {
 		display: none;
 	}
+}
+
+/*		Tablet Layout Portrait 768px.       */
+@media only screen and (max-width: 944px) {
+
 }
 
 /*		Mobile Layout Landscape 480px.       */
