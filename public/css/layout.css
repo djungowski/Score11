@@ -25,6 +25,11 @@ p {
 	padding: 3px;
 }
 
+.score11-container {
+	max-width: 1050px;
+	margin: 0 auto;
+}
+
 .score11-separator {
 	display: block;
 	clear: both;
