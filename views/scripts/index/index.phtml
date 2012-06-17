@@ -1,6 +1,10 @@
 <div class="score11-home-left">
 	<?php echo $this->render('modules/comment/latest.phtml'); ?>
-	<?php echo $this->render('modules/rating/latest.phtml'); ?>
+	<?php
+	$this->movies= $this->latestRatings;
+	$this->sectionTitle = 'Neue Wertungen';
+	echo $this->render('modules/lists/movieImageList.phtml');
+	?>
 </div>
 <div class="score11-home-right">
     <?php

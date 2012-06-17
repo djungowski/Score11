@@ -13,10 +13,11 @@ class OnTv extends Api\Transformator
         $router = $this->getFrontController()->getRouter();
         
             foreach($onTv as $key => $movie) {
-            	$timestamp = strtotime($movie['day']);            
-                $movie['movielink'] = $router->assemble(
+            	$timestamp = strtotime($movie['day']);
+		$movie['movielink'] = 'abc';
+	        $movie['movielink'] = $router->assemble(
                     array(
-                        'movieid' => $movie['ID'],
+                        'movieid' => $movie['movieID'],
                         'name' => $movie['movietitle']
                     ),
                     'moviepage'
