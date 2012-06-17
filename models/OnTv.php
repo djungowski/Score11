@@ -14,7 +14,7 @@ class OnTv extends Api\Transformator
         
             foreach($onTv as $key => $movie) {
             	$timestamp = strtotime($movie['day']);            
-                $movies[$key]['movielink'] = $router->assemble(
+                $movie['movielink'] = $router->assemble(
                     array(
                         'movieid' => $movie['ID'],
                         'name' => $movie['movietitle']
@@ -23,7 +23,7 @@ class OnTv extends Api\Transformator
                 );
                 $timestamp = strtotime($movie['date']);
                 // Verwendete Datumsformate erstellen
-                $movies[$key]['timestamp-time'] = strftime($config->dates->listbox->time, $timestamp);
+                $movie['timestamp-time'] = strftime($config->dates->listbox->time, $timestamp);
 		
 		$this->_tvMovies[] = $movie;
             }
