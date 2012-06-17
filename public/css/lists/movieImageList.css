@@ -34,3 +34,14 @@
 	display: block;
 	text-decoration: none;
 }
+
+
+@media only screen and (max-width: 400px) {
+	.score11-movie-no6, .score11-movie-no7 {
+		display: none !important;
+	}
+
+	.score11-movie-imagelist a {
+		margin: 0px;
+	}
+}

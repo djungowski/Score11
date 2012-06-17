@@ -2,8 +2,8 @@
 	<div class="title"><?php echo $this->sectionTitle; ?></div>
 	<?php if (!empty($this->movies)) { ?>
 	<div>
-	<?php foreach($this->movies as $movie) { ?>
-		<a href="<?php print($movie['movielink']); ?>" style="background: url(<?php print($movie['image']); ?>) no-repeat 50%;">
+	<?php foreach($this->movies as $key => $movie) { ?>
+		<a class="score11-movie-no<?php print($key); ?>" href="<?php print($movie['movielink']); ?>" style="background: url(<?php print($movie['image']); ?>) no-repeat 50%;">
 			<span>
 				<?php print($movie['show-title']); ?>
 			</span>

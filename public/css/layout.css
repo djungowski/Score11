@@ -91,6 +91,8 @@ p {
 	max-width: 415px;
 	clear: both;
 	display: block;
+	margin-bottom: 10px;
+	float: left;
 }
 
 .score11-listbox .title {
