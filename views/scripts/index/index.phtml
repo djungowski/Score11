@@ -6,7 +6,11 @@
     <?php
 	$this->movies = $this->onTv;
 	$this->sectionTitle = 'Fernseh-Tipps';
-	echo $this->render('modules/ontv/home.phtml');
+	echo $this->render('modules/movieImageList.phtml');
     ?>
-    <?php echo $this->render('modules/lists/moviestart.phtml'); ?>
+    <?php
+	$this->movies = $this->movieStartlist;
+	$this->sectionTitle = 'Filmstarts';
+	echo $this->render('modules/movieImageList.phtml');
+    ?>
 </div>
