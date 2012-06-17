@@ -1,12 +1,12 @@
 @CHARSET "UTF-8";
 
-.score11-ontv-home .movietitle .time {
+.score11-movie-imagelist .movietitle .time {
 	font-size: 10px;
 	line-height: 10px;
 	width: 60px;
 }
 
-.score11-ontv-home a {
+.score11-movie-imagelist a {
 	display: block;
 	width: 100px;
 	height: 120px;
@@ -18,9 +18,19 @@
 	overflow: hidden;
 }
 
-.score11-ontv-home a span {
+.score11-movie-imagelist a span {
 	background: rgba(0, 0, 0, .8);
 	color: white;
 	display: none;
 	font-size: 13px;
+	text-decoration: none;
+}
+
+.score11-movie-imagelist a:hover {
+	text-decoration: none;
+}
+
+.score11-movie-imagelist a:hover span {
+	display: block;
+	text-decoration: none;
 }
