@@ -1,53 +1,15 @@
 <div class="score11-ontv-home score11-listbox">
 	<div class="title">Fernseh-Tipps</div>
 	<?php if (!empty($this->onTv)) { ?>
-	<div class="mini-preview">
-		<?php $miniPreviewMovie = $this->miniPreviewMovie['ontv-home']; ?>
-	    <?php if ($miniPreviewMovie['hasimage'] == 'y') { ?>
-	    <a href="<?php print($miniPreviewMovie['movielink']); ?>">
-			<img src="<?php print($miniPreviewMovie['image']); ?>" alt="" />
-		</a>
-		<?php } ?>
-		<a href="<?php print($miniPreviewMovie['movielink']); ?>">
-		    <?php print($miniPreviewMovie['movietitle']); ?>
-	    </a><br />
-		<span class="cast">
-    		von <?php print($miniPreviewMovie['director']); ?>
-    		mit <?php print($miniPreviewMovie['actor']); ?><br />
-    		(<?php print($miniPreviewMovie['movieyear']); ?>)
-		</span>
-	</div>
+	<div>
 	<?php foreach($this->onTv as $date) { ?>
-	<div class="innerbox">
-		<p class="date uneven-row">
-        	<?php print($date['date']); ?>
-        </p>
-        <?php
-        foreach ($date['movies'] as $key => $movie) {
-            $rowClass = 'uneven-row';
-            if ($key % 2 == 0) {
-                $rowClass = 'even-row';
-            }
-        ?>
-        <p class="movietitle <?php print($rowClass); ?>">
-        	<span class="time">
-        	    <?php print($movie['timestamp-time']); ?><br />
-        	    <?php print($movie['sender']); ?>
-        	</span>
-        	<span class="thumb">
-        		<img src="<?php print($this->layout()->imgpath); ?>/thumb-<?php print($movie['thumb']); ?>.gif" />
-    		</span>
-    		<span class="actual-title">
-    			<a href="<?php print($movie['movielink']); ?>">
-                    <?php print($movie['movietitle']); ?>
-                </a>
-                <?php print($movie['movieyear']); ?>
-            </span>
-            <br />
-        </p>
-        <?php } ?>
-	</div>
+        <?php foreach ($date['movies'] as $key => $movie) { ?>
+		<p style="background: url(<?php print($movie['image']); ?>) no-repeat 50%;">
+			<span><?php print($movie['movietitle']); ?></span>
+		</p>
 	<?php } ?>
+	<?php } ?>
+	</div>
 	<?php } else { ?>
 	<div class="uneven-row">
     	Derzeit gibt es keinen Fernsehtipps.

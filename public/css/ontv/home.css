@@ -5,3 +5,18 @@
 	line-height: 10px;
 	width: 60px;
 }
+
+.score11-ontv-home p {
+display: block;
+width: 100px;
+height: 100px;
+float: left;
+margin: 1px;
+padding: 0;
+text-align: center;
+padding-top: 50px;
+}
+
+.score11-ontv-home p span {
+
+}

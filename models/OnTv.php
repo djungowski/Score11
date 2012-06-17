@@ -8,7 +8,7 @@ class OnTv extends Api\Transformator
     
     public function transform($params = array())
     {
-        $onTv = $this->getApi()->get();
+        $onTv = $this->getApi()->get(array('limit' => 8));
         $config = \Zend_Registry::get('config');
         $router = $this->getFrontController()->getRouter();
         
