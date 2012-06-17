@@ -3,6 +3,10 @@
 	<?php echo $this->render('modules/rating/latest.phtml'); ?>
 </div>
 <div class="score11-home-right">
-    <?php echo $this->render('modules/ontv/home.phtml'); ?>
+    <?php
+	$this->movies = $this->onTv;
+	$this->sectionTitle = 'Fernseh-Tipps';
+	echo $this->render('modules/ontv/home.phtml');
+    ?>
     <?php echo $this->render('modules/lists/moviestart.phtml'); ?>
 </div>

@@ -41,7 +41,6 @@ class IndexController extends Zend_Controller_Action
         $transformator->setApi($api);
         
         $this->view->onTv = $transformator->transform();
-        $this->view->miniPreviewMovie['ontv-home'] = $transformator->getMiniPreviewMovie();
     }
     
     private function loadLatestRatings()

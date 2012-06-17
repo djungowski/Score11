@@ -1,8 +1,8 @@
 <div class="score11-ontv-home score11-listbox">
-	<div class="title">Fernseh-Tipps</div>
-	<?php if (!empty($this->onTv)) { ?>
+	<div class="title"><?php echo $this->sectionTitle; ?></div>
+	<?php if (!empty($this->movies)) { ?>
 	<div>
-	<?php foreach($this->onTv as $date) { ?>
+	<?php foreach($this->movies as $date) { ?>
         <?php foreach ($date['movies'] as $key => $movie) { ?>
 		<a href="<?php print($movie['movielink']); ?>" style="background: url(<?php print($movie['image']); ?>) no-repeat 50%;">
 			<span>
@@ -14,9 +14,5 @@
 	<?php } ?>
 	<?php } ?>
 	</div>
-	<?php } else { ?>
-	<div class="uneven-row">
-    	Derzeit gibt es keinen Fernsehtipps.
-    </div>
 	<?php } ?>
 </div>
