@@ -25,8 +25,15 @@ class OnTv extends Api\Transformator
                 // Verwendete Datumsformate erstellen
                 $movie['timestamp-time'] = strftime($config->dates->listbox->time, $timestamp);
 		
+		$movie['show-title'] = $this->getShowTitle($movie);
+
 		$this->_tvMovies[] = $movie;
             }
         return $this->_tvMovies;
+    }
+
+    public function getShowTitle($movie)
+    {
+    	return sprintf('%s<br />%s<br />%s', $movie['timestamp-time'], $movie['sender'], $movie['movietitle']);
     }
 }

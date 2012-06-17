@@ -5,9 +5,7 @@
 	<?php foreach($this->movies as $movie) { ?>
 		<a href="<?php print($movie['movielink']); ?>" style="background: url(<?php print($movie['image']); ?>) no-repeat 50%;">
 			<span>
-				<?php print($movie['timestamp-time']); ?><br />
-			    	<?php print($movie['sender']); ?><br />
-				<?php print($movie['movietitle']); ?>
+				<?php print($movie['show-title']); ?>
 			</span>
 		</a>
 	<?php } ?>
