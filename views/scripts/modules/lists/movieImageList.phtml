@@ -2,8 +2,7 @@
 	<div class="title"><?php echo $this->sectionTitle; ?></div>
 	<?php if (!empty($this->movies)) { ?>
 	<div>
-	<?php foreach($this->movies as $date) { ?>
-        <?php foreach ($date['movies'] as $key => $movie) { ?>
+	<?php foreach($this->movies as $movie) { ?>
 		<a href="<?php print($movie['movielink']); ?>" style="background: url(<?php print($movie['image']); ?>) no-repeat 50%;">
 			<span>
 				<?php print($movie['timestamp-time']); ?><br />
@@ -11,7 +10,6 @@
 				<?php print($movie['movietitle']); ?>
 			</span>
 		</a>
-	<?php } ?>
 	<?php } ?>
 	</div>
 	<?php } ?>

@@ -12,9 +12,8 @@ class OnTv extends Api\Transformator
         $config = \Zend_Registry::get('config');
         $router = $this->getFrontController()->getRouter();
         
-        foreach ($onTv as $date => $movies) {
-            $timestamp = strtotime($date);            
-            foreach($movies as $key => $movie) {
+            foreach($onTv as $key => $movie) {
+            	$timestamp = strtotime($movie['day']);            
                 $movies[$key]['movielink'] = $router->assemble(
                     array(
                         'movieid' => $movie['ID'],
@@ -25,13 +24,9 @@ class OnTv extends Api\Transformator
                 $timestamp = strtotime($movie['date']);
                 // Verwendete Datumsformate erstellen
                 $movies[$key]['timestamp-time'] = strftime($config->dates->listbox->time, $timestamp);
-
+		
+		$this->_tvMovies[] = $movie;
             }
-            $this->_tvMovies[] = array(
-                'date' => strftime($config->dates->listbox->title, $timestamp),
-                'movies' => $movies
-            );
-        }
         return $this->_tvMovies;
     }
 }
