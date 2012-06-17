@@ -6,17 +6,21 @@
 	width: 60px;
 }
 
-.score11-ontv-home p {
-display: block;
-width: 100px;
-height: 100px;
-float: left;
-margin: 1px;
-padding: 0;
-text-align: center;
-padding-top: 50px;
+.score11-ontv-home a {
+	display: block;
+	width: 100px;
+	height: 120px;
+	float: left;
+	margin: 1px;
+	padding: 0;
+	text-align: center;
+	padding-top: 30px;
+	overflow: hidden;
 }
 
-.score11-ontv-home p span {
-
+.score11-ontv-home a span {
+	background: rgba(0, 0, 0, .8);
+	color: white;
+	display: none;
+	font-size: 13px;
 }
