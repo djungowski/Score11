@@ -38,7 +38,7 @@ $router = new Zend_Controller_Router_Rewrite();
 $router->addRoute(
     'moviepage',
     new Zend_Controller_Router_Route(
-        ':movieid/:name',
+        'movie/:movieid/:name',
         array(
             'module' => 'default',
             'controller' => 'movie',
