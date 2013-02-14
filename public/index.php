@@ -17,7 +17,7 @@ Zend_Registry::set('api', $api);
 
 // Set timezone and locale
 date_default_timezone_set($config->general->timezone);
-setlocale(LC_ALL, $config->general->locale);
+$locale = setlocale(LC_ALL, $config->general->locale->toArray());
 
 $front = Zend_Controller_Front::getInstance();
 $front->setControllerDirectory(BASEPATH . '/controllers', 'default');
