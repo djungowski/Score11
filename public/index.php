@@ -16,6 +16,9 @@ $api = new Zend_Config_Ini(BASEPATH . '/config/api.ini');
 Zend_Registry::set('config', $config);
 Zend_Registry::set('api', $api);
 
+// Set timezone
+date_default_timezone_set($config->general->timezone);
+
 $front = Zend_Controller_Front::getInstance();
 $front->setControllerDirectory(BASEPATH . '/controllers', 'default');
 $front->setBaseUrl($config->general->urlbase);
