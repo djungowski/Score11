@@ -25,6 +25,10 @@ p {
 	padding: 3px;
 }
 
+#score11-menu-toggle {
+	cursor: pointer;
+}
+
 #score11-modal-background {
 	position: fixed;
 	top: 0;
