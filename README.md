@@ -63,5 +63,5 @@ date.timezone = Europe/Berlin
 11. score11 DB User anlegen
 <code>grant all privileges on score11.* to 'score11'@'%';</code>
 
-12. setup.sh ausfuehren
-<code>./setup.sh</code>
+12. setup-dev.sh ausfuehren
+<code>./setup-dev.sh</code>
