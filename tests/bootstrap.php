@@ -9,6 +9,11 @@ $_SERVER['APPLICATION_ENV'] = 'phpunit';
 require_once LIBPATH . '/Zend/Registry.php';
 require_once LIBPATH . '/Zend/Config.php';
 
+// Nyan Cat phpunit Printer
+require_once 'vendor/whatthejeff/fab/src/Fab/Factory.php';
+require_once 'vendor/whatthejeff/fab/src/Fab/Fab.php';
+require_once 'vendor/whatthejeff/fab/src/Fab/SuperFab.php';
+
 $config = new Zend_Config(
     array(
         'general' => array(
