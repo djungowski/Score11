@@ -147,6 +147,10 @@ p {
 	border: 1px solid #039;
 }
 
+.score11-listbox .mini-preview:hover {
+	background-color: #039;
+}
+
 .score11-listbox .mini-preview img {
 	border: 1px solid #fff;
 }
