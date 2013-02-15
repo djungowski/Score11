@@ -59,3 +59,9 @@ scp root@score11.de:/home/sschwarz/dbbackup/score11.gz . && gunzip score11.gz &&
 
 10. Sicherstellen, dass in der php.ini der timezone Wert gesetzt ist, z.B.
 date.timezone = Europe/Berlin
+
+11. score11 DB User anlegen
+<code>grant all privileges on score11.* to 'score11'@'%';</code>
+
+12. setup.sh ausfuehren
+<code>./setup.sh</code>
