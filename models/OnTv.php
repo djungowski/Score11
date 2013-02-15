@@ -35,6 +35,6 @@ class OnTv extends Api\Transformator
 
     public function getShowTitle($movie)
     {
-    	return sprintf('%s<br />%s<br />%s', $movie['timestamp-time'], $movie['sender'], $movie['movietitle']);
+    	return sprintf('%s<br />%s', $movie['timestamp-time'], $movie['sender']);
     }
 }

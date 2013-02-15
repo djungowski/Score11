@@ -7,6 +7,7 @@ use Score11\Models;
 class Latest extends Models\OnTv
 {
     public function getShowTitle($movie) {
-        return sprintf('%s', $movie['movietitle']);
+//         return sprintf('%s', $movie['movietitle']);
+		return '';
     }
 }

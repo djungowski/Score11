@@ -12,7 +12,7 @@ class Moviestart extends Models\OnTv
         $config = \Zend_Registry::get('config');
 	$timestamp = strtotime($movie['date']);
 	$day = strftime($config->dates->listbox->date, $timestamp);
-	return sprintf('%s<br />%s', $day, $movie['movietitle']);
+	return sprintf('%s', $day);
     }
 
 }

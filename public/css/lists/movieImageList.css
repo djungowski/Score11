@@ -18,24 +18,9 @@
 	overflow: hidden;
 }
 
-.score11-movie-imagelist a span {
-	background: rgba(0, 0, 0, .8);
-	color: white;
-	display: none;
-	font-size: 13px;
-	text-decoration: none;
-	padding: 5px 0;
+.score11-movie-imagelist .mini-preview {
+	margin: 0 5px 5px 0;
 }
-
-.score11-movie-imagelist a:hover {
-	text-decoration: none;
-}
-
-.score11-movie-imagelist a:hover span {
-	display: block;
-	text-decoration: none;
-}
-
 
 @media only screen and (max-width: 400px) {
 	.score11-movie-no6, .score11-movie-no7 {

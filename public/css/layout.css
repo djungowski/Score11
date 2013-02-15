@@ -26,7 +26,7 @@ p {
 }
 
 .score11-container {
-	max-width: 1050px;
+	max-width: 1100px;
 	margin: 0 auto;
 }
 
@@ -76,7 +76,7 @@ p {
 .score11-content {
 	padding: 0 10px;
 	float: left;
-	max-width: 855px;
+	max-width: 905px;
 	font-size: 12px;
 }
 
@@ -88,7 +88,7 @@ p {
 }
 
 .score11-listbox {
-	max-width: 415px;
+	max-width: 440px;
 	clear: both;
 	display: block;
 	margin-bottom: 10px;
@@ -155,9 +155,33 @@ p {
 	font-size: 10px;
 }
 
+.score11-listbox .mini-preview span.movie-logo-overlay {
+	background: rgba(0, 0, 0, .8);
+	color: white;
+	display: block;
+	font-size: 13px;
+	text-decoration: none;
+	padding: 5px 0;
+}
+
+.score11-listbox .mini-preview a:hover {
+	text-decoration: none;
+}
+
+.score11-listbox .mini-preview a:hover span.movie-logo-overlay {
+	display: none;
+	text-decoration: none;
+}
+
+.score11-listbox .mini-preview .movie-link {
+	height: 75px;
+	padding-top: 3px;
+	overflow: hidden;
+}
+
 @media only screen and (min-width: 1024px) {
 	.score11-content {
-		width: 855px;
+		width: 905px;
 	}
 	/*body {
 		left: 8%;
