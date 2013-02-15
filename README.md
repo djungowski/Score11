@@ -1,0 +1,58 @@
+!Score11 lokal aufsetzen
+1. Score11 auschecken
+git clone git@github.com:djungowski/Score11.git
+
+2. Score11-API auschecken
+git clone 
+
+3. Alias fuer Score11/public anlegen, z.B.
+Alias /score11 /Users/djungowski/Sites/Score11/public
+
+4. Darauf achten, dass der Score11 Ordner folgende Rechte besitzt (Apache2)
+Options MultiViews FollowSymlinks
+AllowOverride All
+
+5. Hostseinträge für Frapi
+sudo echo "127.0.0.1 api.score11.de" >> /etc/hosts
+sudo echo "127.0.0.1 admin.frapi" >> /etc/hosts
+
+6. Apache2 Config fuer Frapi Admin (siehe auch http://frapi.github.com/installing/index.html)
+<VirtualHost *:80>
+    ServerName admin.frapi
+    DirectoryIndex index.php
+    ServerAdmin admin@api.frapi
+
+    # This should be omitted in the production environment
+    SetEnv APPLICATION_ENV development
+
+    DocumentRoot /Users/djungowski/Sites/frapi/src/frapi/admin/public
+    <Directory /Users/djungowski/Sites/frapi/src/frapi/admin/public>
+        AllowOverride All
+        Order deny,allow
+        Allow from All
+    </Directory>
+</VirtualHost>
+
+7. Apache2 Config fuer Frapi Api (siehe auch http://frapi.github.com/installing/index.html)
+<VirtualHost *:80>
+    ServerName api.score11.de
+    ServerAdmin admin@api.frapi
+    DocumentRoot /Users/djungowski/Sites/frapi/src/frapi/public
+
+    # This should be omitted in the production environment
+    SetEnv APPLICATION_ENV development
+
+    <Directory /Users/djungowski/Sites/frapi/src/frapi/public>
+        AllowOverride All
+        Order deny,allow
+        Allow from All
+    </Directory>
+</VirtualHost>
+
+8. Sicherstellen, dass die folgenden PHP Module aktiviert ist
+apc
+php_gd2
+php_mysql
+
+9. DB Dump ziehen und einspielen
+scp root@score11.de:/home/sschwarz/dbbackup/score11.gz . && gunzip score11.gz && mysql score11 <score11
