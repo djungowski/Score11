@@ -56,3 +56,6 @@ php_mysql
 
 9. DB Dump ziehen und einspielen
 scp root@score11.de:/home/sschwarz/dbbackup/score11.gz . && gunzip score11.gz && mysql score11 <score11
+
+10. Sicherstellen, dass in der php.ini der timezone Wert gesetzt ist, z.B.
+date.timezone = Europe/Berlin
