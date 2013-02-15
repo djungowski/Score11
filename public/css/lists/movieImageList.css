@@ -26,6 +26,11 @@
 	.score11-movie-no6, .score11-movie-no7 {
 		display: none !important;
 	}
+	
+	.score11-movie-imagelist .mini-preview {
+		margin: 5px 5px 0 0;
+		padding: 8px 20px;
+	}
 
 	.score11-movie-imagelist a {
 		margin: 0px;
