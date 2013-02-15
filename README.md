@@ -17,23 +17,21 @@ sudo echo "127.0.0.1 api.score11.de" >> /etc/hosts
 sudo echo "127.0.0.1 admin.frapi" >> /etc/hosts
 
 6. Apache2 Config fuer Frapi Admin (siehe auch http://frapi.github.com/installing/index.html)
-<code>
-<VirtualHost *:80>
-    ServerName admin.frapi
-    DirectoryIndex index.php
-    ServerAdmin admin@api.frapi
-
-    # This should be omitted in the production environment
-    SetEnv APPLICATION_ENV development
-
-    DocumentRoot /Users/djungowski/Sites/frapi/src/frapi/admin/public
-    <Directory /Users/djungowski/Sites/frapi/src/frapi/admin/public>
-        AllowOverride All
-        Order deny,allow
-        Allow from All
-    </Directory>
-</VirtualHost>
-</code>
+><VirtualHost *:80>
+>    ServerName admin.frapi
+>    DirectoryIndex index.php
+>    ServerAdmin admin@api.frapi
+>
+>    # This should be omitted in the production environment
+>    SetEnv APPLICATION_ENV development
+>
+>    DocumentRoot /Users/djungowski/Sites/frapi/src/frapi/admin/public
+>    <Directory /Users/djungowski/Sites/frapi/src/frapi/admin/public>
+>        AllowOverride All
+>        Order deny,allow
+>        Allow from All
+>    </Directory>
+></VirtualHost>
 
 7. Apache2 Config fuer Frapi Api (siehe auch http://frapi.github.com/installing/index.html)
 <VirtualHost *:80>
