@@ -25,6 +25,16 @@ p {
 	padding: 3px;
 }
 
+#score11-modal-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.4);
+	display: none;
+}
+
 .score11-container {
 	max-width: 1100px;
 	margin: 0 auto;
@@ -80,11 +90,28 @@ p {
 	font-size: 12px;
 }
 
-.score11-navigation {
-	width: 161px;
+#score11-navigation {
+	color: #00FFFF;
+	width: 156px;
 	background: url(../img/navigation-bg.gif);
 	float: left;
 	font-size: 12px;
+	border: 1px solid #00FFFF;
+	padding: 5px;
+	position: absolute;
+	left: 20px;
+	top: 77px;
+	display: none;
+}
+
+#score11-navigation a {
+	display: block;
+	color: #00FFFF;
+	padding: 6px 0;
+}
+
+#score11-navigation a:hover {
+	background: rgba(0, 0, 0, .4);
 }
 
 .score11-listbox {
@@ -199,7 +226,7 @@ p {
 }
 
 @media only screen and (max-width: 1250px) {
-	.score11-navigation {
+	#score11-navigation {
 		display: none;
 	}
 }

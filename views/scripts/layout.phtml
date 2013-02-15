@@ -16,10 +16,11 @@
 		<script type="text/javascript" src="<?php print $this->layout()->urlbase; ?>js/jquery/1.7.2/jquery.min.js"></script>
 	</head>
 	<body>
+	<div id="score11-modal-background"></div>
 	<div class="score11-header">
 		<div class="score11-celluloid">&nbsp;</div>
 		<div class="logo">
-			<p class="left">
+			<p class="left" id="score11-menu-toggle">
 				<img src="<?php print $this->layout()->imgpath; ?>/score11.gif" />
 			</p>
 			<p class="right">
@@ -31,7 +32,16 @@
 	<div class="score11-separator">&nbsp;</div>
 	<div class="score11-container">
 		
-		<div class="score11-navigation">Home</div>
+		<div id="score11-navigation">
+			<a>Home</a>
+			<a>Was ist Score11?</a>
+			<a>Passwort vergessen?</a>
+			<a>Impressum</a>
+			<a>Nutzungsbedingungen</a>
+			<a>Rechtshinweise</a>
+			<a>Netiquette</a>
+			
+		</div>
 		<div class="score11-content"><?php print $this->layout()->content; ?></div>
 	</div>
 	<div class="score11-separator">&nbsp;</div>
@@ -46,5 +56,12 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="<?php print $this->layout()->urlbase; ?>js/hideAdressbar.js"></script>
+	<script type="text/javascript" src="<?php print $this->layout()->urlbase; ?>js/jquery.menutoggle.js"></script>
+	<script type="text/javascript">
+		$('#score11-menu-toggle').menutoggle({
+			navigationItem: '#score11-navigation',
+			modalBackground: '#score11-modal-background'
+		});
+	</script>
 	</body>
 </html>
