@@ -17,6 +17,7 @@ sudo echo "127.0.0.1 api.score11.de" >> /etc/hosts
 sudo echo "127.0.0.1 admin.frapi" >> /etc/hosts
 
 6. Apache2 Config fuer Frapi Admin (siehe auch http://frapi.github.com/installing/index.html)
+<code>
 <VirtualHost *:80>
     ServerName admin.frapi
     DirectoryIndex index.php
@@ -32,6 +33,7 @@ sudo echo "127.0.0.1 admin.frapi" >> /etc/hosts
         Allow from All
     </Directory>
 </VirtualHost>
+</code>
 
 7. Apache2 Config fuer Frapi Api (siehe auch http://frapi.github.com/installing/index.html)
 <VirtualHost *:80>
