@@ -7,27 +7,36 @@
 		<?php } ?>
 	<?php } ?>
 	
-	<table class="score11-movie-infos">
-		<tr>
-			<td class="category">Genre</td>
-			<td class="cast">
-				<?php foreach ($this->movie['genres'] as $genre) { ?>
-				<?php print($genre['DE']); ?>
-				<?php } ?>
-			</td>
+	<div class="score11-movie-ratings">
+	</div>
+	<div class="score11-movie-infos">
+		<table class="score11-movie-infos">
+			<tr>
+				<td class="category">Genre</td>
+				<td class="cast">
+					<?php foreach ($this->movie['genres'] as $genre) { ?>
+					<?php print($genre['DE']); ?>
+					<?php } ?>
+				</td>
+			</tr>
 			<?php foreach ($this->movie['cast'] as $role => $castList) { ?>
 			<tr>
 				<td class="category"><?php print $role; ?></td>
 				<td class="cast">
 					<?php foreach ($castList as $cast) { ?>
 						<span class="name"><?php print($cast['name']); ?></span>
-						<?php if (!empty($cast['roll'])) { ?>
-							... <span class="role"><?php print($cast['roll']); ?></span><br />
+						<?php if (!empty($cast['role'])) { ?>
+							... <span class="role"><?php print($cast['role']); ?></span>
 						<?php } ?>
+						<br />
 					<?php } ?>
 				</td>
 			</tr>
 			<?php } ?>
-		</tr>
-	</table>
+			<tr>
+				<td class="category">Agent</td>
+				<td class="cast"><?php print($this->movie['agent']['name']); ?></td>
+			</tr>
+		</table>
+	</div>
 </div>
