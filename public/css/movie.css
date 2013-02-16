@@ -37,4 +37,8 @@
 	.score11-movie-image {
 /* 		display: none; */
 	}
+	
+	.score11-movie-infos .cast .role {
+		display: none;
+	}
 }
