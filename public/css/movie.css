@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+.score11-movie {
+	background-color: #000033;
+	border: 1px solid #039;
+	padding: 5px;
+}
+
+.score11-movie-image {
+	float: right;
+	border: 1px solid #666666;
+}
+
+@media only screen and (max-width: 400px) {
+	.score11-movie-image {
+/* 		display: none; */
+	}
+}
