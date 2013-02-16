@@ -3,8 +3,11 @@ namespace Score11\Models\Movie;
 
 class Image
 {
-	public function getLink()
+	public function getLink($movie)
 	{
-		return 'img/logo-movie.png';
+		if ($movie['hasimage'] == 'n') {
+			return 'img/logo-movie.png';
+		}
+		return $movie['image'];
 	}
 }

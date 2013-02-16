@@ -18,7 +18,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 		$movie = array(
 			'hasimage' => 'n'
 		);
-		$actual = $image->getDefaultImageIfNecessary($movie);
+		$actual = $image->getLink($movie);
 		self::assertSame($expected, $actual);
 	}
 	
@@ -30,7 +30,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 			'image' => $expected,
 			'hasimage' => 'y'
 		);
-		$actual = $image->getDefaultImageIfNecessary($movie);
+		$actual = $image->getLink($movie);
 		self::assertSame($expected, $actual);
 	}
 }
