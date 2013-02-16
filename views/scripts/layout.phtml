@@ -17,21 +17,27 @@
 	</head>
 	<body>
 	<div id="score11-modal-background"></div>
-	<div class="score11-header">
-		<div class="score11-celluloid">&nbsp;</div>
-		<div class="logo">
-			<p class="left" id="score11-menu-toggle">
-				<img src="<?php print $this->layout()->imgpath; ?>/score11.gif" />
-			</p>
-			<p class="right">
-				<span class="subtitle">The Movie Community</span>
-			</p>
-		</div>
-		<div class="score11-celluloid">&nbsp;</div>
-	</div>
-	<div class="score11-separator">&nbsp;</div>
 	<div class="score11-container">
+		<div class="score11-container-background">
+			<div class="score11-celluloid">&nbsp;</div>
+			<div class="score11-header-logo">&nbsp;</div>
+			<div class="score11-celluloid">&nbsp;</div>
+		</div>
 		
+		<div class="score11-header">
+			<div class="score11-celluloid-empty">&nbsp;</div>
+			<div class="score11-header-logo">
+				<p class="left" id="score11-menu-toggle">
+					<img src="<?php print $this->layout()->imgpath; ?>/score11.gif" />
+				</p>
+				<p class="right">
+					<span class="subtitle">The Movie Community</span>
+				</p>
+			</div>
+			<div class="score11-celluloid-empty">&nbsp;</div>
+		</div>
+		<div class="score11-separator">&nbsp;</div>
+			
 		<div id="score11-navigation">
 			<a>Home</a>
 			<a>Was ist Score11?</a>
@@ -43,16 +49,17 @@
 			
 		</div>
 		<div class="score11-content"><?php print $this->layout()->content; ?></div>
-	</div>
-	<div class="score11-separator">&nbsp;</div>
-	<div class="score11-footer">
-		<div class="score11-celluloid">&nbsp;</div>
-		<div class="score11-copyright">
-			<span class="base-copyright">Copyright &copy; 2000 - 2012 Stefan Schwarz &amp; Dominik Jungowski. Alle Rechte vorbehalten.</span>
-			<br />
-			<span class="extended-copyright">Bitte beachten Sie die Rechtshinweise, die Nutzungsbedingungen und die Nettiquette.</span>
-			<br />
-			<span class="domains">score11.de - sc11.de - sc11.com - score11.com</span>
+		
+		<div class="score11-separator">&nbsp;</div>
+		<div class="score11-footer">
+			<div class="score11-celluloid">&nbsp;</div>
+			<div class="score11-copyright">
+				<span class="base-copyright">Copyright &copy; 2000 - 2013 Stefan Schwarz &amp; Dominik Jungowski. Alle Rechte vorbehalten.</span>
+				<br />
+				<span class="extended-copyright">Bitte beachten Sie die Rechtshinweise, die Nutzungsbedingungen und die Nettiquette.</span>
+				<br />
+				<span class="domains">score11.de - sc11.de - sc11.com - score11.com</span>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="<?php print $this->layout()->urlbase; ?>js/hideAdressbar.js"></script>

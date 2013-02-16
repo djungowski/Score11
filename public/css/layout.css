@@ -40,8 +40,15 @@ p {
 }
 
 .score11-container {
-	max-width: 1100px;
 	margin: 0 auto;
+	display: table;
+}
+
+.score11-container-background {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: -1;	
 }
 
 .score11-separator {
@@ -53,17 +60,22 @@ p {
 	margin: 0;
 }
 
-.score11-header .logo {
+.score11-header-logo {
 	height: 57px;
 	background-image: url(../img/header-bg.gif);
 }
 
-.score11-header .logo .left {
+.score11-header .score11-header-logo .left {
 	width: 176px;
 	float: left;
 }
 
-.score11-header .logo .right {
+.score11-header .score11-header-logo .left img {
+	position: relative;
+	top: -3px;
+}
+
+.score11-header .score11-header-logo .right {
 	height: 57px;
 	margin-left: 176px;
 	padding-top: 21px;
@@ -75,6 +87,10 @@ p {
 	height: 19px;
 	background-image: url(../img/celluloid.gif);
 	background-repeat: repeat-x;
+}
+
+.score11-celluloid-empty {
+	height: 19px;
 }
 
 .score11-footer {
