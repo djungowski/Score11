@@ -3,7 +3,7 @@ namespace Score11\Models\Movie;
 
 class Image
 {
-	public function getDefaultImageIfNecessary()
+	public function getLink()
 	{
 		return 'img/logo-movie.png';
 	}
