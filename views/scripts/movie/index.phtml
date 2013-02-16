@@ -1,9 +1,33 @@
 <div class="score11-movie">
 	<img src="<?php print $this->movie['image']; ?>" alt="" class="score11-movie-image" />
 	<h1><?php print $this->movie['ori-title']['show-title']?></h1>
-	<?php foreach($this->movie['titles'] as $title) { ?>
+	<?php foreach ($this->movie['titles'] as $title) { ?>
 		<?php if ($title['ID'] != $this->movie['ori']) { ?>
 		<h2><?php print $title['show-title']?></h2>
 		<?php } ?>
 	<?php } ?>
+	
+	<table class="score11-movie-infos">
+		<tr>
+			<td class="category">Genre</td>
+			<td class="cast">
+				<?php foreach ($this->movie['genres'] as $genre) { ?>
+				<?php print($genre['DE']); ?>
+				<?php } ?>
+			</td>
+			<?php foreach ($this->movie['cast'] as $role => $castList) { ?>
+			<tr>
+				<td class="category"><?php print $role; ?></td>
+				<td class="cast">
+					<?php foreach ($castList as $cast) { ?>
+						<span class="name"><?php print($cast['name']); ?></span>
+						<?php if (!empty($cast['roll'])) { ?>
+							... <span class="role"><?php print($cast['roll']); ?></span><br />
+						<?php } ?>
+					<?php } ?>
+				</td>
+			</tr>
+			<?php } ?>
+		</tr>
+	</table>
 </div>

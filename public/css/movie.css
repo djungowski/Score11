@@ -11,6 +11,28 @@
 	border: 1px solid #666666;
 }
 
+.score11-movie-infos {
+	margin-top: 20px;
+}
+
+.score11-movie-infos .category {
+	font-weight: bold;
+	vertical-align: top;
+	padding-right: 10px;
+}
+
+.score11-movie-infos .cast {
+	
+}
+
+.score11-movie-infos .cast .name {
+	
+}
+
+.score11-movie-infos .cast .role {
+	font-style: italic;
+}
+
 @media only screen and (max-width: 400px) {
 	.score11-movie-image {
 /* 		display: none; */
