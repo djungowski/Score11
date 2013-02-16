@@ -1,0 +1,10 @@
+<div class="score11-movie">
+	<?php if ($this->movie['hasimage'] == 'n') $this->movie['image'] = 'img/logo-movie.png'; ?>
+	<img src="<?php print $this->movie['image']; ?>" alt="" class="score11-movie-image" />
+	<h1><?php print $this->movie['ori-title']['show-title']?></h1>
+	<?php foreach($this->movie['titles'] as $title) { ?>
+		<?php if ($title['ID'] != $this->movie['ori']) { ?>
+		<h2><?php print $title['show-title']?></h2>
+		<?php } ?>
+	<?php } ?>
+</div>

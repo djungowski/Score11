@@ -25,6 +25,23 @@ p {
 	padding: 3px;
 }
 
+h1, h2 {
+	color: #FFA722;
+	margin: 0;
+	font-style: italic;
+}
+
+h1 {
+	font-size: 20px;
+	border-bottom: 1px solid #039;
+	margin-bottom: 7px;
+	padding-bottom: 3px;
+}
+
+h2 {
+	font-size: 14px;
+}
+
 #score11-menu-toggle {
 	cursor: pointer;
 }
