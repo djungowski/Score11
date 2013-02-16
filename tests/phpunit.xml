@@ -10,7 +10,7 @@
 
   <testsuites>
     <testsuite name="Suite">
-      <file>TestSuite.php</file>
+      <directory>./</directory>
     </testsuite>
   </testsuites>
 
