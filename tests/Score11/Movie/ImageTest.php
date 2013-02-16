@@ -14,7 +14,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 	public function testGetLinkReturnsDefaultImage()
 	{
 		$image = new Image();
-		$expected = 'img/logo-movie.png';
+		$expected = Image::DEFAULTLOGO;
 		$movie = array(
 			'hasimage' => 'n'
 		);
