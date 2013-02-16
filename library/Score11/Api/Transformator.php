@@ -1,5 +1,8 @@
 <?php
 namespace Score11\Api;
+use Score11\Models\Movie\Image;
+
+require_once MODELSPATH . '/Movie/Image.php';
 
 abstract class Transformator
 {
@@ -89,6 +92,19 @@ abstract class Transformator
     public function getMiniPreviewMovie()
     {
         return $this->_miniPreviewMovie;
+    }
+    
+    /**
+     * Bildlink fuer den Film zurueckgeben. Nimmt das Standardbild, falls der Film
+     * kein eigenes Bild hat
+     * 
+     * @param Array $movie
+     * @return String
+     */
+    protected function getImageLink($movie)
+    {
+    	$image = new Image();
+    	return $image->getLink($movie);
     }
     
     /**

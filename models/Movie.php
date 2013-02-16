@@ -10,6 +10,7 @@ class Movie extends Api\Transformator
 	{
 		$movie = $this->getApi()->get($params);
 		$movie = $this->createShowTitles($movie);
+		$movie['image'] = $this->getImageLink($movie);
 		$movie['ori-title'] = $this->getOriTitle($movie);
 		return $movie;
 	}
