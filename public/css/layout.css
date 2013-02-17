@@ -50,6 +50,15 @@ h2 {
 	text-align: center;
 }
 
+a.disabled {
+	color: gray;		
+}
+
+a.disabled:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
 #score11-menu-toggle {
 	cursor: pointer;
 }

@@ -10,7 +10,8 @@
 			offset,
 			urlOptions,
 			loaderFunction,
-			commentContainer;
+			commentContainer,
+			originalElement;
 		
 		from = $(this).find(".from");
 		to = $(this).find(".to");
@@ -18,12 +19,25 @@
 		prev = $(this).find(".prev");
 		next = $(this).find(".next");
 		commentContainer = $(this).find('#comments');
+		originalElement = this;
 		
 		jQuery.fn.commentloader.checkPrevAndNext(prev, next, from.html(), to.html(), options);
 		
 		loaderFunction = function(event) {
-			if (typeof event != 'undefined' && event.data.offset == 'decrease') {
-				options.offset -= options.stepSize * 2;
+			var position;
+			
+			if (typeof event != 'undefined') {
+				event.preventDefault();
+				// Nichts laden, wenn der Textlink deaktiviert ist
+				if ($(event.target).hasClass('disabled')) {
+					return false;
+				}
+				// Nach oben scrollen
+				$('html, body').stop().animate({ scrollTop: $(originalElement).offset().top }, 400);
+				
+				if (event.data.offset == 'decrease') {
+					options.offset -= options.stepSize * 2;
+				}
 			}
 			urlOptions = {
 				offset: options.offset,
@@ -31,6 +45,7 @@
 			};
 
 			loader.show();
+			
 			// Initial laden
 			commentContainer.load(options.baseUrl, urlOptions, function(){
 		        loader.hide();
@@ -55,15 +70,15 @@
 	
 	jQuery.fn.commentloader.checkPrevAndNext = function(prev, next, from, to, options) {
 		if (to < options.total) {
-			next.show();
+			next.removeClass('disabled');
 		} else {
-			next.hide();
+			next.addClass('disabled');
 		}
 
 		if (to > options.stepSize) {
-			prev.show();
+			prev.removeClass('disabled');
 		} else {
-			prev.hide();
+			prev.addClass('disabled');
 		}
 	}
 	
