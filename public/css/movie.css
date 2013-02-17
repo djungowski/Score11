@@ -80,6 +80,11 @@
 	border-color: #039;
 }
 
+.score11-movie-comments .amount-comments img {
+	position: relative;
+	top: 3px;
+}
+
 .score11-movie-comments .amount-comments .navigation {
 	float: right;
 }
