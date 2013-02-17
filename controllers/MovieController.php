@@ -27,6 +27,7 @@ class MovieController extends Zend_Controller_Action
 		
 		$this->view->movie = $transformator->transform();
 		$this->view->maxCast = $this->_maxCast;
+		$this->view->commentsLink = $this->generateCommentsLink();
 	}
 	
 	public function commentsAction()
@@ -38,5 +39,19 @@ class MovieController extends Zend_Controller_Action
 		$transformator->setApi($api);
 		
 		$this->view->comments = $transformator->transform();
+	}
+	
+	private function generateCommentsLink()
+	{
+		$movieId = (int)$this->_getParam('movieid');
+		$movieName = (int)$this->_getParam('name');
+		$router = $this->getFrontController()->getRouter();
+		return $router->assemble(
+			array(
+					'movieid' => $movieId,
+					'name' => $movieName
+			),
+			'moviecomments'
+		) . '?ajax=1';
 	}
 }
