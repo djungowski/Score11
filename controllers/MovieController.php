@@ -1,11 +1,11 @@
 <?php
-require_once MODELSPATH . '/Movie.php';
-
+use Score11\Api;
 use Score11\Models\Movie;
+use Score11\Models\Movie\Comments;
 
 require_once LIBPATH . '/Score11/Api/Call.php';
-
-use Score11\Api;
+require_once MODELSPATH . '/Movie.php';
+require_once MODELSPATH . '/Movie/Comments.php';
 
 class MovieController extends Zend_Controller_Action
 {
@@ -27,5 +27,14 @@ class MovieController extends Zend_Controller_Action
 		
 		$this->view->movie = $transformator->transform();
 		$this->view->maxCast = $this->_maxCast;
+	}
+	
+	public function commentsAction()
+	{
+		$movieId = (int)$this->_getParam('movieid');
+		$api = new Api\Call('movie/' . $movieId . '/comments');
+		$transformator = new Comments();
+		$transformator->setFrontController($this->getFrontController());
+		$transformator->setApi($api);
 	}
 }

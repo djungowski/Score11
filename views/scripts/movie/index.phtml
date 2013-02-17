@@ -69,14 +69,17 @@
 	</div>
 	
 	<div class="score11-separator">&nbsp;</div>
+	<script type="text/javascript">
+		$('#score11-movie-info-showall').infotoggle({
+			elements: '.score11-movie-info .hidden'
+		});
+	
+		$('.score11-movie-info .basic-info a').infotoggle({
+			elements: '.score11-movie-info table',
+			hideAdditionally: '.score11-movie-info .basic-info'
+		});
+	</script>
+	
+	<div class="score11-movie-comments">
+	</div>
 </div>
-<script type="text/javascript">
-	$('#score11-movie-info-showall').infotoggle({
-		elements: '.score11-movie-info .hidden'
-	});
-
-	$('.score11-movie-info .basic-info a').infotoggle({
-		elements: '.score11-movie-info table',
-		hideAdditionally: '.score11-movie-info .basic-info'
-	});
-</script>
