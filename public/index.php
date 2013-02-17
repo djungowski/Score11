@@ -35,7 +35,7 @@ if (!$isAjaxCall) {
 	$layout->urlbase = $config->general->urlbase;
 	$layout->imgpath = $config->general->urlbase . $config->general->imgpath;
 	// Kann jederzeit ueberschrieben werden, hier den Standardtitel setzen
-	$layout->title = $config->general->title;
+	$layout->title = $config->general->title->full;
 }
 
 $env = new Score11\Environment();

@@ -28,6 +28,11 @@ class MovieController extends Zend_Controller_Action
 		$this->view->movie = $transformator->transform();
 		$this->view->maxCast = $this->_maxCast;
 		$this->view->commentsLink = $this->generateCommentsLink();
+		
+		// Titel setzen
+		$config = Zend_Registry::get('config');
+		$title = sprintf($config->general->title->template, $this->view->movie['ori-title']['show-title']);
+		$this->view->layout()->title = $title;
 	}
 	
 	public function commentsAction()
