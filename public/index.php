@@ -28,14 +28,16 @@ $front->setBaseUrl($config->general->urlbase);
 $request = new Zend_Controller_Request_Http();
 $isAjaxCall = (bool)$request->getParam('ajax', false);
 
-// Zend_Layout verwenden, falls es kein Ajax-Call ist
-if (!$isAjaxCall) {
-	Zend_Layout::startMvc();
-	$layout = Zend_Layout::getMvcInstance();
-	$layout->urlbase = $config->general->urlbase;
-	$layout->imgpath = $config->general->urlbase . $config->general->imgpath;
-	// Kann jederzeit ueberschrieben werden, hier den Standardtitel setzen
-	$layout->title = $config->general->title->full;
+Zend_Layout::startMvc();
+$layout = Zend_Layout::getMvcInstance();
+$layout->urlbase = $config->general->urlbase;
+$layout->imgpath = $config->general->urlbase . $config->general->imgpath;
+// Kann jederzeit ueberschrieben werden, hier den Standardtitel setzen
+$layout->title = $config->general->title->full;
+$layout->setInflectorTarget('layouts/:script.:suffix');
+// Anderes Layout verwenden, wenn es ein Ajax Call ist
+if ($isAjaxCall) {
+	$layout->setInflectorTarget('layouts/ajax.:suffix');
 }
 
 $env = new Score11\Environment();
