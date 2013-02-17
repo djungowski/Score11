@@ -44,6 +44,8 @@
 				limit: options.stepSize
 			};
 
+			loader.height(commentContainer.height());
+			loader.width(commentContainer.width() - 1);
 			loader.show();
 			
 			// Initial laden

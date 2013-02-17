@@ -48,6 +48,10 @@ h2 {
 
 .ajax-loader {
 	text-align: center;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	z-index: 1;
+	padding-top: 20px;
 }
 
 a.disabled {
