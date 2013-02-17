@@ -74,7 +74,7 @@ a.disabled:hover {
 }
 
 #score11-navigation, .score11-menu-toggle-active{
-	border-color: gray !important;
+	border-color: #00ffff !important;
 }
 
 #score11-navigation {
@@ -90,6 +90,7 @@ a.disabled:hover {
 	right: 0px;
 	display: none;
 	z-index: 2;
+	border-radius: 4px 0 4px 4px;
 }
 
 #score11-navigation a {
@@ -110,6 +111,7 @@ a.disabled:hover {
 	border-width: 1px;
 	border-color: transparent;
 	border-style: solid;
+	border-radius: 4px 4px 0 0;
 	top: 1px;
 }
 
