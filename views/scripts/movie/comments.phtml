@@ -2,7 +2,7 @@
 <div class="score11-movie-comment">
 	<div class="author">
 		<a href="http://www.gravatar.com" class="gravatar"><img src="<?php print $comment['gravatar']; ?>" alt="" /></a>
-		<?php if ($comment['showrating']) { ?>
+		<?php if ($comment['showrating'] && !empty($comment['score'])) { ?>
 		<span class="user-rating">
 			<?php print $comment['score']; ?>/10
 			<img src="<?php print $comment['thumb']; ?>" alt="<?php print $comment['score']; ?>" class="thumb" title="Wertung: <?php print $comment['score']; ?>" />
