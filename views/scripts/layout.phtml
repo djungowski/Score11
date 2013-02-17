@@ -31,8 +31,10 @@
 		<div class="score11-header">
 			<div class="score11-celluloid-empty">&nbsp;</div>
 			<div class="score11-header-logo">
-				<div class="navigation-item" id="score11-menu-toggle">
-					<img src="<?php print $this->layout()->imgpath; ?>/icons/menu.png" alt="MenŸ" />
+				<div class="navigation-item">
+					<div id="score11-menu-toggle">
+						<img src="<?php print $this->layout()->imgpath; ?>/icons/menu.png" alt="Men&uuml;" />
+					</div>
 					<div id="score11-navigation">
 						<a href="<?php print $this->layout()->urlbase; ?>">Home</a>
 						<a>Was ist Score11?</a>
@@ -74,7 +76,8 @@
 	<script type="text/javascript">
 		$('#score11-menu-toggle').menutoggle({
 			navigationItem: '#score11-navigation',
-			modalBackground: '#score11-modal-background'
+			modalBackground: '#score11-modal-background',
+			activeClass: 'score11-menu-toggle-active'
 		});
 	</script>
 	</body>

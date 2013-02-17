@@ -75,7 +75,20 @@ a.disabled:hover {
 
 #score11-menu-toggle {
 	cursor: pointer;
-	z-index: 2;
+	z-index: 3;
+	padding: 3px;
+	position: relative;
+	border-width: 1px;
+	border-color: transparent;
+	border-style: solid;
+	top: 1px;
+}
+
+.score11-menu-toggle-active {
+	border-color: #fff !important;
+	border-style: solid solid none solid !important;
+	background: url(../img/navigation-bg.gif);
+	background-position: right;
 }
 
 #score11-modal-background {
@@ -120,7 +133,7 @@ a.disabled:hover {
 	float: right;
 	position: relative;
 	top: 13px;
-	right: 30px;
+	right: 10px;
 }
 
 .score11-header .score11-header-logo .left {

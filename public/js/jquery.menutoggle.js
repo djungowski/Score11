@@ -3,15 +3,20 @@
 		options = options || jQuery.fn.menutoggle.options;
 		
 		var navigationItem,
+			toggleItem,
 			modalBackground,
 			callback;
 		
 		navigationItem = $(options.navigationItem);
+		toggleItem = $(this);
 		modalBackground = $(options.modalBackground)
 		
 		callback = function() {
-			navigationItem.fadeToggle();
-			modalBackground.fadeToggle();
+			
+			navigationItem.fadeToggle(50, function() {
+				toggleItem.toggleClass(options.activeClass);
+			});
+			modalBackground.fadeToggle(50);
 		};
 		
 		this.each(function(key, item) {
