@@ -6,6 +6,7 @@ require_once LIBPATH . '/Zend/Controller/Front.php';
 require_once LIBPATH . '/Zend/Controller/Exception.php';
 require_once LIBPATH . '/Zend/Controller/Router/Route.php';
 require_once LIBPATH . '/Zend/Controller/Router/Rewrite.php';
+require_once LIBPATH . '/Zend/Controller/Request/Http.php';
 require_once LIBPATH . '/Zend/Layout.php';
 require_once LIBPATH . '/Score11/Environment.php';
 
@@ -23,13 +24,19 @@ $front = Zend_Controller_Front::getInstance();
 $front->setControllerDirectory(BASEPATH . '/controllers', 'default');
 $front->setBaseUrl($config->general->urlbase);
 
-// Zend_Layout verwenden
-Zend_Layout::startMvc();
-$layout = Zend_Layout::getMvcInstance();
-$layout->urlbase = $config->general->urlbase;
-$layout->imgpath = $config->general->urlbase . $config->general->imgpath;
-// Kann jederzeit ueberschrieben werden, hier den Standardtitel setzen
-$layout->title = $config->general->title;
+// Schauen, ob Ajax verwendet wird oder nicht
+$request = new Zend_Controller_Request_Http();
+$isAjaxCall = (bool)$request->getParam('ajax', false);
+
+// Zend_Layout verwenden, falls es kein Ajax-Call ist
+if (!$isAjaxCall) {
+	Zend_Layout::startMvc();
+	$layout = Zend_Layout::getMvcInstance();
+	$layout->urlbase = $config->general->urlbase;
+	$layout->imgpath = $config->general->urlbase . $config->general->imgpath;
+	// Kann jederzeit ueberschrieben werden, hier den Standardtitel setzen
+	$layout->title = $config->general->title;
+}
 
 $env = new Score11\Environment();
 if ($_SERVER['APPLICATION_ENV'] === 'development') {
@@ -38,6 +45,21 @@ if ($_SERVER['APPLICATION_ENV'] === 'development') {
 }
 
 $router = new Zend_Controller_Router_Rewrite();
+$router->addRoute(
+	'moviecomments',
+	new Zend_Controller_Router_Route(
+		'movie/:movieid/:name/comments',
+		array(
+				'module' => 'default',
+				'controller' => 'movie',
+				'action' => 'comments'
+		),
+		array(
+				'movieid' => '\d+'
+		)
+	)
+);
+
 $router->addRoute(
     'moviepage',
     new Zend_Controller_Router_Route(
@@ -53,5 +75,4 @@ $router->addRoute(
     )
 );
 $front->setRouter($router);
-
 $front->dispatch();
