@@ -1,6 +1,12 @@
 Score11 lokal aufsetzen
 =======================
 
+Abhängigkeiten:
+
+	mysql
+	php
+	memcache
+
 1. Score11 auschecken
 
         git clone git@github.com:djungowski/Score11.git
@@ -61,8 +67,9 @@ Score11 lokal aufsetzen
 8. Sicherstellen, dass die folgenden PHP Module aktiviert ist
 
         apc
-        php_gd2
-        php_mysql
+        gd2
+        mysql
+	memcache
 
 9. DB Dump ziehen und einspielen
 
