@@ -46,6 +46,10 @@ h2 {
 	display: none;
 }
 
+.ajax-loader {
+	text-align: center;
+}
+
 #score11-menu-toggle {
 	cursor: pointer;
 }
@@ -129,7 +133,7 @@ h2 {
 	padding: 0 10px;
 	float: left;
 	max-width: 905px;
-	font-size: 12px;
+	font-size: 13px;
 	margin-top: 10px;
 }
 

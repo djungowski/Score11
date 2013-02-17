@@ -90,6 +90,18 @@
 	margin-right: 5px;
 }
 
+.score11-movie-comment .author .name, .score11-movie-comment .author .timestamp {
+	display: block;
+	position: relative;
+	top: -2px;
+	margin: 0;
+	padding: 0;
+}
+
+.score11-movie-comment .author .name {
+	font-weight: bold;
+}
+	
 .score11-movie-comment .text {
 	background-color: #000066;
 }
