@@ -1,6 +1,11 @@
 (function(jQuery, $) {
 	jQuery.fn.commentloader = function(options) {
 		options = jQuery.extend({}, jQuery.fn.commentloader.options, options);
+		
+		// Ueberladen: Wenn mobile Webseite, dann nimm mobile stepSize
+		if (jQuery.fn.commentloader.checkForMobile()) {
+			options.stepSize = options.stepSizeMobile;
+		}
 
 		var from,
 			to,
@@ -69,6 +74,10 @@
 		next.on('click', {offset: 'increase'}, loaderFunction);
 		prev.on('click', {offset: 'decrease'}, loaderFunction);
 	};
+	
+	jQuery.fn.commentloader.checkForMobile = function() {
+		return $('.score11-mobile-landscape').is(':visible');
+	}
 	
 	jQuery.fn.commentloader.checkPrevAndNext = function(prev, next, from, to, options) {
 		if (to < options.total) {

@@ -18,6 +18,7 @@ class MovieController extends Zend_Controller_Action
 	
 	private $_defaultOffset = 0;
 	private $_defaultLimit = 25;
+	private $_defaultLimitMobile = 10;
 	
 	public function indexAction()
 	{
@@ -32,6 +33,7 @@ class MovieController extends Zend_Controller_Action
 		$this->view->maxCast = $this->_maxCast;
 		$this->view->commentsLink = $this->generateCommentsLink();
 		$this->view->stepSize = $this->_defaultLimit;
+		$this->view->stepSizeMobile = $this->_defaultLimitMobile;
 		$this->view->offset = $this->_defaultOffset;
 		
 		// Titel setzen
