@@ -94,18 +94,34 @@
 	</script>
 	
 	<div class="score11-movie-comments">
-		<p class="amount-comments">
-			<span class="total"><?php print $this->movie['comments']; ?> Kommentare</span> - 
-			Zeige #<span class="from">1</span> - #<span class="to">25</span>
-		</p>
+		<div class="amount-comments">
+			<p class="info">
+				<span class="total"><?php print $this->movie['comments']; ?></span> <b>Kommentare</b> - 
+				Zeige <span class="from">1</span> bis <span class="to">25</span>
+			</p>
+			<p class="navigation"><span class="prev">Vorherige Seite |</span> <span class="next">N&auml;chste Seite</span></p>
+		</div>
+		<div class="score11-separator">&nbsp;</div>
 		<p class="ajax-loader">
 			<img src="img/ajax-loader-003.gif" alt="Loading..." />
 		</p>
-		<div></div>
+		<div id="comments"></div>
+		<div class="amount-comments">
+			<p class="info">
+				<span class="total"><?php print $this->movie['comments']; ?> Kommentare</span> - 
+				Zeige <span class="from">1</span> bis <span class="to">25</span>
+			</p>
+			<p class="navigation"><span class="prev">Vorherige Seite |</span> <span class="next">N&auml;chste Seite</span></p>
+		</div>
+		<div class="score11-separator">&nbsp;</div>
 	</div>
 	<script type="text/javascript">
-		$('.score11-movie-comments div').load('<?php print $this->commentsLink; ?>', function(){
-	        $(".ajax-loader").hide();
-	    });
+		$('.score11-movie-comments').commentloader({
+			baseUrl: '<?php print $this->commentsLink; ?>',
+			total: <?php print $this->movie['comments']; ?>,
+			loader: '.ajax-loader',
+			stepSize: <?php print $this->stepSize; ?>,
+			offset: <?php print $this->offset; ?>
+		});
 	</script>
 </div>

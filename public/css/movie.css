@@ -80,6 +80,18 @@
 	border-color: #039;
 }
 
+.score11-movie-comments .amount-comments .navigation {
+	float: right;
+}
+
+.score11-movie-comments .amount-comments .navigation .prev, .score11-movie-comments .amount-comments .navigation .next {
+	display: none;
+}
+
+.score11-movie-comments .amount-comments .info {
+	float: left;
+}
+
 .score11-movie-comments .amount-comments .total {
 	font-weight: bold;
 }
@@ -141,6 +153,10 @@
 	
 	.score11-movie-ratings, .score11-movie-info, .score11-movie-comments {
 		margin-top: 10px;
+	}
+	
+	.score11-movie-comments .amount-comments .navigation, .score11-movie-comments .amount-comments .info {
+		float: none;
 	}
 }
 
