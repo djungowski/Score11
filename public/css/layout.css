@@ -42,6 +42,16 @@ h2 {
 	font-size: 14px;
 }
 
+img.thumb {
+	border: 1px solid #000;
+	border-radius: 3px;
+}
+
+.thumb img {
+	border: 1px solid #000;
+	border-radius: 3px;
+}
+
 .hidden {
 	display: none;
 }

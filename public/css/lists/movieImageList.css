@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+.score11-movie-imagelist .movietitle .name {
+	width: 292px;
+}
+
 .score11-movie-imagelist .movietitle .time {
 	font-size: 10px;
 	line-height: 10px;
