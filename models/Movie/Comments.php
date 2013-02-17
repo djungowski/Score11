@@ -34,6 +34,7 @@ class Comments extends Api\Transformator
 			$timestamp = strtotime($comment['timestamp']);
 			// Verwendete Datumsformate erstellen
 			$comments[$key]['timestamp'] = strftime($config->dates->comments->time, $timestamp);
+			$comments[$key]['thumb'] = sprintf($config->thumb->template, $comment['thumb']);
 		}
 		return $comments;
 	}

@@ -107,6 +107,19 @@
 	margin-right: 5px;
 }
 
+.score11-movie-comment .author .user-rating {
+	float: right;
+	font-size: 12px;
+	line-height: 30px;
+}
+
+.score11-movie-comment .author .user-rating .thumb {
+	position: relative;
+	top: 4px;
+	border: 1px solid #000;
+	border-radius: 3px;
+}
+
 .score11-movie-comment .author .name, .score11-movie-comment .author .timestamp {
 	display: block;
 	position: relative;
