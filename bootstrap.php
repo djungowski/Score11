@@ -1,6 +1,6 @@
 <?php
 // Basispfad ermitteln
-$path = explode('/', __FILE__);
+$path = explode(DIRECTORY_SEPARATOR, __FILE__);
 // Eine Ebene entfernen, damit faellt /public weg
 $path = array_slice($path, 0, count($path) - 1);
 
