@@ -1,6 +1,6 @@
 (function(jQuery, $) {
 	jQuery.fn.menutoggle = function(options) {
-		options = options || jQuery.fn.menutoggle.options;
+		options =  jQuery.extend({}, jQuery.fn.menutoggle.options, options);
 		
 		var navigationItem,
 			toggleItem,
@@ -13,10 +13,10 @@
 		
 		callback = function() {
 			
-			navigationItem.fadeToggle(50, function() {
+			navigationItem.fadeToggle(options.fadeTime, function() {
 				toggleItem.toggleClass(options.activeClass);
 			});
-			modalBackground.fadeToggle(50);
+			modalBackground.fadeToggle(options.fadeTime);
 		};
 		
 		this.each(function(key, item) {
@@ -31,5 +31,7 @@
 		});
 	}
 	
-	jQuery.fn.menutoggle.options = {};
+	jQuery.fn.menutoggle.options = {
+		fadeTime: 20
+	};
 }(jQuery, jQuery));
