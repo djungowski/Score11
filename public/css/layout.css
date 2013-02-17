@@ -75,9 +75,6 @@ a.disabled:hover {
 
 #score11-menu-toggle {
 	cursor: pointer;
-}
-
-#score11-menu-toggle img {
 	z-index: 2;
 }
 
@@ -117,6 +114,13 @@ a.disabled:hover {
 .score11-header-logo {
 	height: 57px;
 	background-image: url(../img/header-bg.gif);
+}
+
+.score11-header-logo .navigation-item {
+	float: right;
+	position: relative;
+	top: 13px;
+	right: 30px;
 }
 
 .score11-header .score11-header-logo .left {
@@ -174,7 +178,7 @@ a.disabled:hover {
 	border: 1px solid #00FFFF;
 	padding: 5px;
 	position: absolute;
-	top: 77px;
+	right: 0px;
 	display: none;
 	z-index: 2;
 }

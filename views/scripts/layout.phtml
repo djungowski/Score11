@@ -31,8 +31,22 @@
 		<div class="score11-header">
 			<div class="score11-celluloid-empty">&nbsp;</div>
 			<div class="score11-header-logo">
-				<p class="left" id="score11-menu-toggle">
-					<img src="<?php print $this->layout()->imgpath; ?>/score11.gif" />
+				<div class="navigation-item" id="score11-menu-toggle">
+					<img src="<?php print $this->layout()->imgpath; ?>/icons/menu.png" />
+					<div id="score11-navigation">
+						<a href="<?php print $this->layout()->urlbase; ?>">Home</a>
+						<a>Was ist Score11?</a>
+						<a>Passwort vergessen?</a>
+						<a>Impressum</a>
+						<a>Nutzungsbedingungen</a>
+						<a>Rechtshinweise</a>
+						<a>Netiquette</a>
+					</div>
+				</div>
+				<p class="left">
+					<a href="<?php print $this->layout()->urlbase; ?>">
+						<img src="<?php print $this->layout()->imgpath; ?>/score11.gif" />
+					</a>
 				</p>
 				<p class="right">
 					<span class="subtitle">The Movie Community</span>
@@ -40,18 +54,8 @@
 			</div>
 			<div class="score11-celluloid-empty">&nbsp;</div>
 		</div>
-		<div class="score11-separator">&nbsp;</div>
-			
-		<div id="score11-navigation">
-			<a href="<?php print $this->layout()->urlbase; ?>">Home</a>
-			<a>Was ist Score11?</a>
-			<a>Passwort vergessen?</a>
-			<a>Impressum</a>
-			<a>Nutzungsbedingungen</a>
-			<a>Rechtshinweise</a>
-			<a>Netiquette</a>
-			
-		</div>
+		<div class="score11-separator">&nbsp;</div>			
+		
 		<div class="score11-content"><?php print $this->layout()->content; ?></div>
 		
 		<div class="score11-separator">&nbsp;</div>
