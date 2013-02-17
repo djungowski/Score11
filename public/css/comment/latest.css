@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+.score11-comment-latest .movietitle .name {
+	width: 292px;
+}
+
 /*		Tablet Layout Portrait 768px.       */
 @media only screen and (max-width: 944px) {
 	
