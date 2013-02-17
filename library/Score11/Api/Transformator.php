@@ -28,6 +28,25 @@ abstract class Transformator
     protected $_miniPreviewMovie;
     
     /**
+     * Konstruktor
+     * 
+     */
+    public function __construct()
+    {
+    	$this->init();
+    }
+    
+    /**
+     * Diese Methode in Ableitung ueberladen,
+     * wenn Initialisierungen vorgenommen werden muessen
+     * 
+     */
+    protected function init()
+    {
+    	
+    }
+    
+    /**
      * Front Controller setzen
      * 
      * @param \Zend_Controller_Front $front

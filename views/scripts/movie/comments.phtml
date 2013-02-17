@@ -1,7 +1,12 @@
 <?php foreach ($this->comments as $comment) { ?>
 <div class="score11-movie-comment">
 	<div class="author">
-		<?php print $comment['username']; ?>
+		<a href="http://www.gravatar.com" class="gravatar"><img src="<?php print $comment['gravatar']; ?>" alt="" /></a>
+		<?php print $comment['username']; ?><br />
+		<?php print $comment['timestamp']; ?>
+	</div>
+	<div class="text">
+		<?php print $comment['text']; ?>
 	</div>
 </div>
 <?php } ?>
