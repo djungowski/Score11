@@ -75,6 +75,7 @@ h2 {
 .score11-separator {
 	display: block;
 	clear: both;
+	height: 0;
 }
 
 .score11-header p {
@@ -129,6 +130,7 @@ h2 {
 	float: left;
 	max-width: 905px;
 	font-size: 12px;
+	margin-top: 10px;
 }
 
 #score11-navigation {

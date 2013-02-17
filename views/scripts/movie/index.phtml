@@ -6,6 +6,7 @@
 		<h2><?php print $title['show-title']?></h2>
 		<?php } ?>
 	<?php } ?>
+	<div class="score11-separator score11-mobile-landscape">&nbsp;</div>
 	
 	<div class="score11-movie-ratings">
 		<p class="score11-movie-rating-avg">
@@ -23,8 +24,9 @@
 	
 	<div class="score11-movie-info">
 		<p class="basic-info score11-mobile-landscape">
-			von <?php print $this->movie['regie']; ?><br />
-			mit <?php print $this->movie['actor']; ?>
+			von <?php print $this->movie['regie']; ?>,
+			mit <?php print $this->movie['actor']; ?><br />
+			<a href="#">[Kompletten Cast anzeigen]</a>
 		</p>
 		<table>
 			<tr>
@@ -72,5 +74,10 @@
 <script type="text/javascript">
 	$('#score11-movie-info-showall').infotoggle({
 		elements: '.score11-movie-info .hidden'
+	});
+
+	$('.score11-movie-info .basic-info a').infotoggle({
+		elements: '.score11-movie-info table',
+		hideAdditionally: '.score11-movie-info .basic-info'
 	});
 </script>

@@ -34,6 +34,10 @@
 	width: 50%;
 }
 
+.score11-movie-info .basic-info {
+	text-align: center;
+}
+
 .score11-movie-info .category {
 	font-weight: bold;
 	vertical-align: top;
@@ -71,6 +75,9 @@
 	
 	.score11-movie-info {
 		width: auto;
+		border-style: solid none;
+		border-width: 1px;
+		border-color: #039;
 	}
 	
 	.score11-movie-info table {
