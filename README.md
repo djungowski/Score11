@@ -83,6 +83,11 @@ Abhängigkeiten:
 
         grant all privileges on score11.* to 'score11'@'localhost';
 
-12. setup-dev.sh ausfuehren
+12. setup-dev.sh ausfuehren (Score11)
 
         ./setup-dev.sh
+
+13. setup-tests.sh ausfuehren (frapi)
+
+	cd frapi/src/frapi/custom/
+	./setup-tests.sh
