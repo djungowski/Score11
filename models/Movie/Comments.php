@@ -8,6 +8,7 @@ class Comments extends Api\Transformator
 {
 	public function transform($params = array())
 	{
-		
+		$comments = $this->getApi()->get($params);
+		return $comments;
 	}
 }

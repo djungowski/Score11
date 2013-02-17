@@ -36,5 +36,7 @@ class MovieController extends Zend_Controller_Action
 		$transformator = new Comments();
 		$transformator->setFrontController($this->getFrontController());
 		$transformator->setApi($api);
+		
+		$this->view->comments = $transformator->transform();
 	}
 }
