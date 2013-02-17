@@ -24,11 +24,16 @@ class Comments extends Api\Transformator
 	
 	public function transform($params = array())
 	{
+		$config = \Zend_Registry::get('config');
 		$comments = $this->getApi()->get($params);
 		foreach ($comments as $key => $comment) {
 			$comments[$key]['gravatar'] = $this->getGravatar($comment['gravatar']);
 			$comments[$key]['text'] = $this->stripTags($comment['text']);
 			$comments[$key]['text'] = nl2br($comments[$key]['text']);
+			
+			$timestamp = strtotime($comment['timestamp']);
+			// Verwendete Datumsformate erstellen
+			$comments[$key]['timestamp'] = strftime($config->dates->comments->time, $timestamp);
 		}
 		return $comments;
 	}
