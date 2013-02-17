@@ -42,6 +42,10 @@ h2 {
 	font-size: 14px;
 }
 
+.hidden {
+	display: none;
+}
+
 #score11-menu-toggle {
 	cursor: pointer;
 }
@@ -246,6 +250,15 @@ h2 {
 	overflow: hidden;
 }
 
+/**
+ Klassen fuer das mobile Layout. Werden standardmaessig ausgeblendet und nur bis zu einem bestimmten
+ mobilen Layout eingeblendet
+ */
+.score11-mobile-landscape {
+	display: none;
+}
+
+
 @media only screen and (min-width: 1024px) {
 	.score11-content {
 		width: 905px;
@@ -262,9 +275,7 @@ h2 {
 }
 
 @media only screen and (max-width: 1250px) {
-	#score11-navigation {
-		display: none;
-	}
+
 }
 
 /*		Tablet Layout Portrait 768px.       */
@@ -274,6 +285,9 @@ h2 {
 
 /*		Mobile Layout Landscape 480px.       */
 @media only screen and (max-width: 480px) {
+	.score11-mobile-landscape {
+		display: block;
+	}
 }
 
 /*		Mobile Layout Portrait 320px.       */

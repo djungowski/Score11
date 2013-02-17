@@ -8,29 +8,56 @@
 	<?php } ?>
 	
 	<div class="score11-movie-ratings">
+		<p class="score11-movie-rating-avg">
+			<?php if($this->movie['ratings'] == 0) { ?>
+			-
+			<?php } else { ?>
+			<?php print $this->movie['ratingsavg']; ?>
+			<span class="score11-rating-maximum">/ 10</span>
+			<?php } ?>
+		</p>
+		<p>
+			(<?php print $this->movie['ratings']; ?> Wertungen)
+		</p>
 	</div>
-	<div class="score11-movie-infos">
-		<table class="score11-movie-infos">
+	
+	<div class="score11-movie-info">
+		<p class="basic-info score11-mobile-landscape">
+			von <?php print $this->movie['regie']; ?><br />
+			mit <?php print $this->movie['actor']; ?>
+		</p>
+		<table>
 			<tr>
 				<td class="category">Genre</td>
 				<td class="cast">
 					<?php foreach ($this->movie['genres'] as $genre) { ?>
-					<?php print($genre['DE']); ?>
+					<?php print($genre['DE']); ?> /
 					<?php } ?>
 				</td>
 			</tr>
+			<?php $castCounter = 0; $visibilityClass = ''; ?>
 			<?php foreach ($this->movie['cast'] as $role => $castList) { ?>
-			<tr>
+			<?php if ($castCounter >= $this->maxCast) $visibilityClass = 'hidden'; ?>
+			<tr class="<?php print $visibilityClass; ?>">
 				<td class="category"><?php print $role; ?></td>
 				<td class="cast">
 					<?php foreach ($castList as $cast) { ?>
-						<span class="name"><?php print($cast['name']); ?></span>
-						<?php if (!empty($cast['role'])) { ?>
-							<span class="role">... <?php print($cast['role']); ?></span>
-						<?php } ?>
-						<br />
+						<?php if ($castCounter >= $this->maxCast) $visibilityClass = 'hidden'; ?>
+						<p class="<?php print $visibilityClass; ?>">
+							<span class="name"><?php print($cast['name']); ?></span>
+							<?php if (!empty($cast['role'])) { ?>
+								<span class="role">... <?php print($cast['role']); ?></span>
+							<?php } ?>
+						</p>
+						<?php $castCounter++; ?>
 					<?php } ?>
 				</td>
+			</tr>
+			<?php } ?>
+			<?php if ($visibilityClass == 'hidden') { ?>
+			<tr>
+				<td>&nbsp;</td>
+				<td><a href="#" id="score11-movie-info-showall">[Alle Eintr&auml;ge anzeigen]</a></td>
 			</tr>
 			<?php } ?>
 			<tr>
@@ -39,4 +66,11 @@
 			</tr>
 		</table>
 	</div>
+	
+	<div class="score11-separator">&nbsp;</div>
 </div>
+<script type="text/javascript">
+	$('#score11-movie-info-showall').infotoggle({
+		elements: '.score11-movie-info .hidden'
+	});
+</script>

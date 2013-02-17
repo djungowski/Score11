@@ -11,34 +11,90 @@
 	border: 1px solid #666666;
 }
 
-.score11-movie-infos {
+.score11-movie-ratings, .score11-movie-info {
 	margin-top: 20px;
 }
 
-.score11-movie-infos .category {
+.score11-movie-ratings {
+	float: right;
+	width: 40%;
+}
+
+.score11-movie-rating-avg {
+	font-size: 30px;
+	font-weight: bold;
+	background-color: #039;
+}
+
+.score11-rating-maximum {
+	font-size: 12px;
+}
+
+.score11-movie-info {
+	width: 50%;
+}
+
+.score11-movie-info .category {
 	font-weight: bold;
 	vertical-align: top;
 	padding-right: 10px;
 }
 
-.score11-movie-infos .cast {
+.score11-movie-info .cast {
 	
 }
 
-.score11-movie-infos .cast .name {
+.score11-movie-info .cast .name {
 	
 }
 
-.score11-movie-infos .cast .role {
+.score11-movie-info p {
+	padding: 0;
+}
+
+.score11-movie-info .cast .role {
 	font-style: italic;
 }
 
-@media only screen and (max-width: 400px) {
-	.score11-movie-image {
-/* 		display: none; */
+/*		Tablet Layout Portrait 768px.       */
+@media only screen and (max-width: 944px) {
+	.score11-movie {
+		width: 720px;
+	}
+}
+
+/*		Phone Landscape						*/
+@media only screen and (max-width: 480px) {
+	.score11-movie {
+		width: 440px;
 	}
 	
-	.score11-movie-infos .cast .role {
+	.score11-movie-info {
+		width: auto;
+	}
+	
+	.score11-movie-info table {
+		display: none;
+	}
+	
+	.score11-movie-ratings {
+		float: none;
+		width: auto;
+		text-align: center;
+	}
+	
+	.score11-movie-ratings, .score11-movie-info {
+		margin-top: 10px;
+	}
+}
+
+/*		Phone Normal						*/
+@media only screen and (max-width: 400px) {
+	.score11-movie {
+		width: 290px
+	}
+	
+	.score11-movie-info .cast .role {
 		display: none;
 	}
 }
