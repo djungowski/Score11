@@ -54,6 +54,10 @@ h2 {
 	cursor: pointer;
 }
 
+#score11-menu-toggle img {
+	z-index: 2;
+}
+
 #score11-modal-background {
 	position: fixed;
 	top: 0;
@@ -62,6 +66,7 @@ h2 {
 	bottom: 0;
 	background: rgba(0, 0, 0, 0.4);
 	display: none;
+	z-index: 1;
 }
 
 .score11-container {
@@ -148,6 +153,7 @@ h2 {
 	position: absolute;
 	top: 77px;
 	display: none;
+	z-index: 2;
 }
 
 #score11-navigation a {
