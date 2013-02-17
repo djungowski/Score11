@@ -116,8 +116,6 @@
 .score11-movie-comment .author .user-rating .thumb {
 	position: relative;
 	top: 4px;
-	border: 1px solid #000;
-	border-radius: 3px;
 }
 
 .score11-movie-comment .author .name, .score11-movie-comment .author .timestamp {
