@@ -15,9 +15,18 @@
 	margin-top: 20px;
 }
 
+.score11-movie-ratings-tablet-portrait {
+	margin-top: 10px;
+	float: none;
+	width: auto;
+	text-align: center;
+}
+
 .score11-movie-ratings {
 	float: right;
 	width: 40%;
+	position: relative;
+	top: 50px;
 }
 
 .score11-movie-rating-avg {
@@ -128,12 +137,6 @@
 	
 	.score11-movie-info table {
 		display: none;
-	}
-	
-	.score11-movie-ratings {
-		float: none;
-		width: auto;
-		text-align: center;
 	}
 	
 	.score11-movie-ratings, .score11-movie-info, .score11-movie-comments {

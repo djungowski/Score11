@@ -1,5 +1,18 @@
 <div class="score11-movie">
 	<img src="<?php print $this->movie['image']; ?>" alt="" class="score11-movie-image" />
+	<!--  Rating: Einmal fuer die Anzeige ab Tablet Portrait -->
+	<div class="score11-movie-ratings score11-tablet-portrait-visible">
+		<p class="score11-movie-rating-avg">
+			<?php if($this->movie['ratings'] == 0) { ?>
+			-
+			<?php } else { ?>
+			<?php print $this->movie['ratingsavg']; ?><span class="score11-rating-maximum">/ 10</span>
+			<?php } ?>
+		</p>
+		<p>
+			(<?php print $this->movie['ratings']; ?> Wertungen)
+		</p>
+	</div>
 	<h1><?php print $this->movie['ori-title']['show-title']?></h1>
 	<?php foreach ($this->movie['titles'] as $title) { ?>
 		<?php if ($title['ID'] != $this->movie['ori']) { ?>
@@ -7,8 +20,8 @@
 		<?php } ?>
 	<?php } ?>
 	<div class="score11-separator score11-mobile-landscape">&nbsp;</div>
-	
-	<div class="score11-movie-ratings">
+	<!--  Rating: Und einmal fuer die Anzeige bis Tablet Portrait -->
+	<div class="score11-movie-ratings-tablet-portrait score11-tablet-portrait">
 		<p class="score11-movie-rating-avg">
 			<?php if($this->movie['ratings'] == 0) { ?>
 			-

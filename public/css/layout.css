@@ -264,6 +264,14 @@ h2 {
 	display: none;
 }
 
+.score11-tablet-portrait {
+	display: none;
+}
+
+.score11-tablet-portrait-visible {
+	display: block;
+}
+
 
 @media only screen and (min-width: 1024px) {
 	.score11-content {
@@ -291,6 +299,14 @@ h2 {
 
 /*		Mobile Layout Landscape 480px.       */
 @media only screen and (max-width: 480px) {
+	.score11-tablet-portrait-visible {
+		display: none;
+	}
+	
+	.score11-tablet-portrait {
+		display: block;
+	}
+	
 	.score11-mobile-landscape {
 		display: block;
 	}
