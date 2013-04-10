@@ -89,5 +89,5 @@ Abhängigkeiten:
 
 13. setup-tests.sh ausfuehren (frapi)
 
-	cd frapi/src/frapi/custom/
-	./setup-tests.sh
+	   cd frapi/src/frapi/custom/
+	   ./setup-tests.sh
