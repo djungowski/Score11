@@ -29,7 +29,18 @@ Abhängigkeiten:
         sudo echo "127.0.0.1 api.score11.de" >> /etc/hosts
         sudo echo "127.0.0.1 admin.frapi" >> /etc/hosts
 
-6. Apache2 Config fuer Frapi Admin (siehe auch http://frapi.github.com/installing/index.html)
+6. Apache2 Config für Score11
+
+        <Directory /Users/djungowski/Sites/Score11/public>
+                SetEnv APPLICATION_ENV development
+                RewriteEngine On
+                RewriteBase /2012
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php
+        </Directory>
+
+7. Apache2 Config fuer Frapi Admin (siehe auch http://frapi.github.com/installing/index.html)
 
         <VirtualHost *:80>
             ServerName admin.frapi
@@ -47,7 +58,7 @@ Abhängigkeiten:
             </Directory>
         </VirtualHost>
 
-7. Apache2 Config fuer Frapi Api (siehe auch http://frapi.github.com/installing/index.html)
+8. Apache2 Config fuer Frapi Api (siehe auch http://frapi.github.com/installing/index.html)
         
         <VirtualHost *:80>
             ServerName api.score11.de
@@ -64,30 +75,30 @@ Abhängigkeiten:
             </Directory>
         </VirtualHost>
 
-8. Sicherstellen, dass die folgenden PHP Module aktiviert ist
+9. Sicherstellen, dass die folgenden PHP Module aktiviert ist
 
         apc
         gd2
         mysql
 	memcache
 
-9. DB Dump ziehen und einspielen
+10. DB Dump ziehen und einspielen
 
         scp root@score11.de:/home/sschwarz/dbbackup/score11.gz . && gunzip score11.gz && mysql score11 <score11
 
-10. Sicherstellen, dass in der php.ini der timezone Wert gesetzt ist, z.B.
+11. Sicherstellen, dass in der php.ini der timezone Wert gesetzt ist, z.B.
 
         date.timezone = Europe/Berlin
 
-11. score11 DB User anlegen
+12. score11 DB User anlegen
 
         grant all privileges on score11.* to 'score11'@'localhost';
 
-12. setup-dev.sh ausfuehren (Score11)
+13. setup-dev.sh ausfuehren (Score11)
 
         ./setup-dev.sh
 
-13. setup-tests.sh ausfuehren (frapi)
+14. setup-tests.sh ausfuehren (frapi)
 
         cd frapi/src/frapi/custom/
         ./setup-tests.sh
